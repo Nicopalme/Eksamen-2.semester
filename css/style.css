@@ -34,7 +34,14 @@ summary {
 :root {
     --darkBlue: #214050;
     --lightBlue: #40687f;
+    --lightBlueFaded: rgba(50, 100, 255, .3);
     --grey: #808184;
+    --white: rgba(255,255,255,0.95);
+
+    --pad: .5em 1em;
+   
+    --thickBorder: 3px solid var(--darkBlue);
+    --shadow: 0px 0px 25px var(--darkBlue);
 }
 
 /* Skrifter
@@ -78,22 +85,23 @@ main {
 }
 
 
-aside, article{ border: 3px solid var(--darkBlue);
-      /* padding: 10px; */
-    box-shadow: 0px 0px 25px var(--darkBlue);
-}
-article{border-top: none;}
-li{border: 3px solid var(--darkBlue); border-bottom: none;}
-#liBilling{border-left: none;}
-#liStatistics{border-right: none;}
+
+
+
+
 
 /* Sidebar
 ..................................................*/
 aside {
     width: 18%;
-    background-color: var(--grey);
+    background-color: var(--white);
     height: 100%;
-    padding: 0 1em;
+    padding: var(--pad);
+    border: var(--thickBorder);
+    box-shadow: var(--shadow);
+    
+    
+    
 }
 
 input[type=text] {
@@ -107,7 +115,7 @@ input[type=text] {
 }
 
 input[type=text]:hover {
-    outline: 4px solid var(--lightBlue);
+    outline: 3px solid var(--lightBlue);
 }
 
 
@@ -115,6 +123,9 @@ input[type=text]:hover {
 ..................................................*/
 article {
     width: 70%;
+    border: var(--thickBorder);
+    border-top: none;
+    box-shadow: var(--shadow);
 }
 
 /* Navigation
@@ -130,15 +141,25 @@ nav li {
     float: left;
     width: 49.5%;
     text-align: center;
-    padding: 1.5em 0;
+  
     background-color: lemonchiffon;
+    border: var(--thickBorder);
+    border-bottom: none;
 }
+nav li h2{  padding: 3% 0;}
+
+#liBilling{border-left: none;}
+#liStatistics{border-right: none;}
+
+/* nav li h2:hover{transform: scale(1.5);} */
 
 /* Indholdet
 ............................*/
+.dataInfo{width: 35%;}
 
 section {
-    background-color: var(--grey);
+    background-color: var(--white);
+    padding: var(--pad);
 }
 
 #changingContent {
@@ -148,6 +169,39 @@ section {
 /* Billing
 .....................*/
 
+/* Tabellen
+...........*/
+table {
+    font-family: arial, sans-serif;
+    /* border-collapse: collapse; */
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: .5em;
+  }
+  
+  tr:nth-child(even) {
+    background-color: var(--lightBlueFaded);
+  }
+
+
+/* Knapper
+...........*/
+  .btn {
+    border: none;
+    border-radius: 10px;
+    background-color: greenyellow;
+    padding: var(--pad);
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  /* On mouse-over */
+  .btn:hover {background: darkgreen;}
 
 /* Statistics
 .....................*/

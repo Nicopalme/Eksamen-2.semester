@@ -4,8 +4,8 @@
 // });
 
 window.onload = function () {
-    billingFunction();
-  }
+  billingFunction();
+}
 
 // // SKift af indhold ved klik på person (Thore)
 // function thoreFunction() {
@@ -21,7 +21,7 @@ window.onload = function () {
 //     document.getElementById("valgfag1").style.backgroundImage = "url(img/valgfag_analog.jpg)";
 //     // Skifte andet valgfagsbillede
 //     document.getElementById("valgfag2").style.backgroundImage = "url(img/valgfag_elektronisk_musik.png)";
-  
+
 //     // Give vælg mig videoen en ramme (outline) når den er valgt (ved klik)
 //     document.getElementById("interviewThore").style.outline = "solid 1.5em #D8C11D";
 //     // Fjerne rammen fra Frans video
@@ -30,15 +30,27 @@ window.onload = function () {
 //     document.getElementById("stregtopfran").style.display = "none";
 //   }
 
-  function billingFunction(){
-// Skifte første valgfagsbillede
-document.getElementById("liStatistics").style.borderBottom = "solid 1px var(--darkBlue)";
-document.getElementById("liStatistics").style.backgroundColor = "var(--grey)";
-document.getElementById("liBilling").style.backgroundColor = "#ffffff";
-  }
-  function statisticsFunction(){
-    // Skifte første valgfagsbillede
-    document.getElementById("liBilling").style.borderBottom = "solid 1px var(--darkBlue)";
-    document.getElementById("liBilling").style.backgroundColor = "var(--grey)";
-    document.getElementById("liStatistics").style.backgroundColor = "#ffffff";
-      }
+
+function h2Hover() {
+  document.getElementsByTagName("h2").style.transform = "scale(1.5)";
+}
+
+function billingFunction() {
+  let liStat = document.getElementById("liStatistics");
+  let liBill = document.getElementById("liBilling");
+  liStat.style.borderBottom = "solid 1px var(--darkBlue)";
+  liBill.style.borderBottom = "none";
+  liStat.style.backgroundColor = "var(--grey)";
+  liBill.style.backgroundColor = "var(--white)";
+  document.getElementById("changingContent").innerHTML = "<table> <col width=bor;15%bor;><col width=bor;20%bor;><tr><th><button type=bor;buttonbor; class=bor;btnbor;>Export all remaining invoices</button></th><th>Distributor</th><th>Total</th><th>ALU</th><th>PET</th><th>HDPE</th><th>Other plastics</th><th>Other material</th></tr><tr><td></td><td>Coca-cola</td><td>20504</td><td>1295</td><td>1245</td><td>2035</td><td>9541</td><td>5203</td></tr><tr><td></td><td>Pepsi</td><td>5230</td><td>1250</td></tr><tr><td></td><td>Carlsberg</td><td>1452</td><td>959</td></tr><tr><td></td><td>Dist</td><td>3210</td><td>2018</td></tr><tr><td></td><td>Dist</td><td>3210</td><td>2018</td></tr><tr><td></td><td>Dist</td><td>3210</td><td>2018</td></tr><table> ";
+}
+
+function statisticsFunction() {
+  let liStat = document.getElementById("liStatistics");
+  let liBill = document.getElementById("liBilling");
+  liBill.style.borderBottom = "solid 1px var(--darkBlue)";
+  liStat.style.borderBottom = "none";
+  liBill.style.backgroundColor = "var(--grey)";
+  liStat.style.backgroundColor = "var(--white)";
+  document.getElementById("changingContent").innerHTML = "Visuel graf";
+}

@@ -28,7 +28,7 @@ REGELER FOR HTML:
     <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
     <link href="css/style.css" rel="stylesheet">
-   
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
@@ -125,19 +125,19 @@ REGELER FOR HTML:
             <!-- Navigationen mellem de to faner -->
             <nav>
                 <ul class="flexContainer">
-                    <li id="liBilling" onclick="billingFunction()">Billing</li>
-                    <li id="liStatistics" onclick="statisticsFunction()">Statistics</li>
+                    <li id="liBilling" onmouseover="h2Hover()" onclick="billingFunction()"><h2>Billing</h2></li>
+                    <li id="liStatistics" onmouseover="h2Hover()" onclick="statisticsFunction()"><h2>Statistics</h2></li>
                 </ul>
             </nav>
 
             <!-- Section med information de anvendte parametre -->
             <section class="flexContainer">
-                <div>
+                <div class="dataInfo">
                     <p>Location:</p>
                     <p>Machine:</p>
                     <p>Batch:</p>
                 </div>
-                <div>
+                <div class="dataInfo">
                     <p>Date:</p>
                     <p>Time:</p>
                 </div>
@@ -145,7 +145,67 @@ REGELER FOR HTML:
 
             <!-- Section med det indhold som er tilpasset fanerne -->
             <section id="changingContent">
-
+                    <!-- <table>
+                            <col width="15%">
+                            <col width="20%">
+                            <col width="15%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
+    
+                        <tr>
+                            <th><button type="button" class="btn">Export all remaining invoices</button></th>
+                            <th>Distributor</th>
+                            <th>Total</th>
+                            <th>ALU</th>
+                            <th>PET</th>
+                            <th>HDPE</th>
+                            <th>Other plastics</th>
+                            <th>Other material</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Coca-cola</td>
+                            <td>20504</td>
+                            <td>1295</td>
+                            <td>1245</td>
+                            <td>2035</td>
+                            <td>9541</td>
+                            <td>5203</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Pepsi</td>
+                            <td>5230</td>
+                            <td>1250</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Carlsberg</td>
+                            <td>1452</td>
+                            <td>959</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Dist</td>
+                            <td>3210</td>
+                            <td>2018</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Dist</td>
+                            <td>3210</td>
+                            <td>2018</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Dist</td>
+                            <td>3210</td>
+                            <td>2018</td>
+                        </tr>
+                    </table> -->
 
 
             </section>

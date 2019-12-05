@@ -8,22 +8,30 @@
 REGELER FOR HTML: 
 - Hvis der er noget der skal væk, så brug ordet FJERN, så man kan søge på det.
 - Brug semantiske tags
-- ID og class navne skrivesPaaDenneMaade
+- ID og class navne skrivesPaaDenneMaade - ALTID PÅ ENGELSK
 - Hvis der er noget der skal rettes senere, så skriv XXX, så man kan søge på det.
 
 
 -->
+
 <head>
 
     <meta charset="utf-8" />
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
-    <title>Data visualisation | Anker Andersen A/S</title>
+    <title>Data visualization | Anker Andersen A/S</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow">
     <!-- <meta name="keywords" content="XXX" FJERN?/> -->
-    <meta name="description" content="XXX" />
+    <!-- <meta name="description" content="XXX" FJERN/> -->
     <link href="css/reset.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
     <link href="css/style.css" rel="stylesheet">
+   
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     <script src="js/script.js"></script>
 </head>
 
@@ -32,35 +40,127 @@ REGELER FOR HTML:
 
 <body>
 
-   
-   
-   
-   <!-- Alt indhold i headeren
+
+
+
+    <!-- Alt indhold i headeren
 ............................................................. 
 -->
     <header>
-    
+
     </header>
 
-  
-  
-   
-   <!-- Det unikke indhold på siden
+
+
+
+    <!-- Det unikke indhold på siden
 ............................................................. 
 -->
-    <main>
+    <main class="flexContainer">
 
+        <!-- Sidebar med inputfelter-->
+        <aside>
+
+            <!-- Input for "location" -->
+            <form>
+                <!-- Label/skilt -->
+                <label for="locationForm">Location:</label>
+                <!-- Indstillinger for input -->
+                <input type="text" name="location" id="locationForm" list="locations" placeholder="Choose location">
+                <!-- Hvilken type indputfelt -->
+                <datalist id="locations">
+                    <!-- Diverse muligheder -->
+                    <option value="Buffalo">
+                    <option value="Rochester">
+                    <option value="Syracuse">
+                </datalist>
+            </form>
+
+            <!-- Input for "machine" -->
+            <form action="">
+                <!-- Label/skilt -->
+                <label for="machineForm">Machine:</label>
+                <!-- Indstillinger for input -->
+                <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine">
+                <!-- Hvilken type indputfelt -->
+                <datalist id="machine">
+                    <!-- Diverse muligheder -->
+                    <option>2019112119351753</option>
+                    <option>2019112119351753</option>
+                    <option>2019112119351753</option>
+                    <option>2019112119351753</option>
+                    <option>2019112119351753</option>
+                    <!-- etc... -->
+                </datalist>
+            </form>
+
+            <!-- Input for "date and time" -->
+            <h3>Date and Time</h3>
+
+            <!-- Date: <div id="datepicker"></div> -->
+
+            <!-- Input for "batch" -->
+            <form action="">
+                <!-- Label/skilt -->
+                <label for="batchForm">Batch:</label>
+                <!-- Indstillinger for input -->
+                <input type="text" name="team" id="batchForm" list="batch" placeholder="Choose batch">
+                <!-- Hvilken type indputfelt -->
+                <datalist id="batch">
+                    <!-- Diverse muligheder -->
+                    <option>2019112119351753</option>
+                    <option>2019112119351754</option>
+                    <option>2019112119351755</option>
+                    <option>2019112119351756</option>
+                    <option>2019112119351757</option>
+                    <!-- etc... -->
+                </datalist>
+            </form>
+
+
+        </aside>
+
+        <!-- Sidens faktiske indhold -->
+        <article>
+            <!-- Navigationen mellem de to faner -->
+            <nav>
+                <ul class="flexContainer">
+                    <li id="liBilling" onclick="billingFunction()">Billing</li>
+                    <li id="liStatistics" onclick="statisticsFunction()">Statistics</li>
+                </ul>
+            </nav>
+
+            <!-- Section med information de anvendte parametre -->
+            <section class="flexContainer">
+                <div>
+                    <p>Location:</p>
+                    <p>Machine:</p>
+                    <p>Batch:</p>
+                </div>
+                <div>
+                    <p>Date:</p>
+                    <p>Time:</p>
+                </div>
+            </section>
+
+            <!-- Section med det indhold som er tilpasset fanerne -->
+            <section id="changingContent">
+
+
+
+            </section>
+        </article>
 
     </main>
 
-  
-  
-   
-   <!-- Alt indhold i footeren
+
+
+
+    <!-- Alt indhold i footeren
 ............................................................. 
 -->
     <footer>
-      
+
     </footer>
 
 

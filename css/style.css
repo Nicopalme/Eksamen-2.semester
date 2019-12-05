@@ -1,3 +1,4 @@
+/* Meyers reset*/
 article,
 aside,
 details,
@@ -13,49 +14,143 @@ summary {
     display: block;
 }
 
+/* CSS struktur
+.........................................................................*/
 /* REGELER FOR CSS:
 - Alt der har med fonte at gøre står samlet i toppen
 - Lav afsnit og en overskuelig struktur
 - Skriv kommentarer!
+- Alt skrives i procent eller em!
 */
 
 
-/* Skrifter
+
+/* Generelt
 .........................................................................*/
 
+/* Farver
+..................................................*/
+/* CSS variabler med farverne */
+:root {
+    --darkBlue: #214050;
+    --lightBlue: #40687f;
+    --grey: #808184;
+}
+
+/* Skrifter
+..................................................*/
 body {
     font: 12px/18px "TrebuchetMS", Helvetica, Verdana, sans-serif;
     /*XXX*/
+    background-color: var(--lightBlue);
 }
 
-
+/* Flex
+..................................................*/
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 /* Header
 .........................................................................*/
+header,
+footer {
+    height: 100px;
+  
+}
+
+/*FJERN*/
 
 
 
 /* Main
 .........................................................................*/
+main {
+    /*FJERN*/
+    height: 600px;
+}
 
+
+main {
+    justify-content: space-around;
+}
+
+
+aside, article{ border: 3px solid var(--darkBlue);
+      /* padding: 10px; */
+    box-shadow: 0px 0px 25px var(--darkBlue);
+}
+article{border-top: none;}
+li{border: 3px solid var(--darkBlue); border-bottom: none;}
+#liBilling{border-left: none;}
+#liStatistics{border-right: none;}
 
 /* Sidebar
 ..................................................*/
+aside {
+    width: 18%;
+    background-color: var(--grey);
+    height: 100%;
+    padding: 0 1em;
+}
 
+input[type=text] {
+    width: 100%;
+    padding: .5em;
+    margin: .2em 0 1.5em;
+    /* border: 2px solid var(--lightBlue); */
+    /* border-radius: 4px; */
+    outline: 2px solid var(--lightBlue);
+    box-sizing: border-box;
+}
 
+input[type=text]:hover {
+    outline: 4px solid var(--lightBlue);
+}
 
 
 /* Content area
 ..................................................*/
+article {
+    width: 70%;
+}
 
+/* Navigation
+............................*/
+nav ul {
+    width: 100%;
+    list-style: none;
+
+    justify-content: space-between;
+}
+
+nav li {
+    float: left;
+    width: 49.5%;
+    text-align: center;
+    padding: 1.5em 0;
+    background-color: lemonchiffon;
+}
+
+/* Indholdet
+............................*/
+
+section {
+    background-color: var(--grey);
+}
+
+#changingContent {
+    height: 70%;
+}
 
 /* Billing
-............................*/
+.....................*/
 
 
 /* Statistics
-............................*/
+.....................*/
 
 
 
@@ -67,7 +162,3 @@ body {
 
 /* @media query! Skærme over XXXpx
 ..................................................................*/
-
-
-
-

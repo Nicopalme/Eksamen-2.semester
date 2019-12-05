@@ -1,0 +1,73 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/* REGELER FOR CSS:
+- Alt der har med fonte at gøre står samlet i toppen
+- Lav afsnit og en overskuelig struktur
+- Skriv kommentarer!
+*/
+
+
+/* Skrifter
+.........................................................................*/
+
+body {
+    font: 12px/18px "TrebuchetMS", Helvetica, Verdana, sans-serif;
+    /*XXX*/
+}
+
+
+
+
+/* Header
+.........................................................................*/
+
+
+
+/* Main
+.........................................................................*/
+
+
+/* Sidebar
+..................................................*/
+
+
+
+
+/* Content area
+..................................................*/
+
+
+/* Billing
+............................*/
+
+
+/* Statistics
+............................*/
+
+
+
+/* Footer
+.........................................................................*/
+
+
+
+
+/* @media query! Skærme over XXXpx
+..................................................................*/
+
+
+
+

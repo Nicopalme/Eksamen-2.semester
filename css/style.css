@@ -42,7 +42,7 @@ summary {
     --lightBlueFaded: rgba(50, 100, 255, .3);
     --grey: #808184;
     --white: rgba(255,255,255,0.95);
---lightlightblue:#eef1f6;
+    --lightlightblue:#eef1f6;
 
     --pad: .5em 1em;
    
@@ -132,32 +132,6 @@ input[type=text]:hover {
 
 
 /* Time and date */
-.demo-non-form {
-    color: initial;
-    width: 100%;
-    padding: 10px;
-    margin: 6px 0 12px 0;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    font-family: arial, verdana, sans-serif;
-    font-size: 14px;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-}
-
-.demo-container {
-    padding: 0 1em;
-}
-
-.external-container {
-    display: flex;
-}
-
-.external-container button.external-button {
-    font-weight: 400;
-    padding: 10px;
-    margin: 6px 0 12px 16px;
-}
 
 
 

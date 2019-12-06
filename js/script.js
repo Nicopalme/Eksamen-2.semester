@@ -12,6 +12,8 @@ function billingFunction() {
   liBill.style.border = "none";
   liStat.style.backgroundColor = "var(--grey)";
   liBill.style.backgroundColor = "var(--white)";
+  liBill.style.fontWeight = "bold";
+  liStat.style.fontWeight = "normal";
 }
 
 
@@ -23,6 +25,8 @@ function statisticsFunction() {
   liStat.style.border = "none";
   liBill.style.backgroundColor = "var(--grey)";
   liStat.style.backgroundColor = "var(--white)";
+  liStat.style.fontWeight = "bold";
+  liBill.style.fontWeight = "normal";
  }
 
 // Time and date kalender med mulighed for at vælge flere datoer

@@ -54,3 +54,36 @@ function statisticsFunction() {
   liStat.style.backgroundColor = "var(--white)";
   document.getElementById("changingContent").innerHTML = "Visuel graf";
 }
+
+// Time and date kalender med mulighed for at vælge flere 
+mobiscroll.settings = {
+  theme: 'ios',
+  themeVariant: 'light'
+};
+
+mobiscroll.range('#demo', {
+  startInput: '#start',
+  endInput: '#end'
+});
+
+mobiscroll.range('#date', {
+  startInput: '#startDate',
+  endInput: '#endDate',
+  controls: ['date']
+});
+
+mobiscroll.range('#demo-non-form', {
+  showSelector: false
+});
+
+var now = new Date(),
+  week = [now, new Date(now.getFullYear(), now.getMonth(), now.getDate() + 6, 23, 59)];
+
+var instance = mobiscroll.range('#demo-external', {
+  showOnTap: false,
+  showOnFocus: false,
+  showSelector: false,
+  onInit: function (event, inst) {
+      inst.setVal(week, true);
+  }
+});

@@ -15,6 +15,14 @@ REGELER FOR HTML:
 -->
 
 <head>
+    <!-- Links som måske skal bruges -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+
 
     <meta charset="utf-8" />
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
@@ -23,16 +31,28 @@ REGELER FOR HTML:
     <meta name="robots" content="noindex, nofollow">
     <!-- <meta name="keywords" content="XXX" FJERN?/> -->
     <!-- <meta name="description" content="XXX" FJERN/> -->
+
+    <!-- Reset CSS -->
     <link href="css/reset.css" rel="stylesheet">
+    <!-- CSS til tabs -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
 
+    <!-- Our stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Script til tabs -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>
+    <!-- Our script -->
     <script src="js/script.js"></script>
+
 </head>
 
 
@@ -85,11 +105,11 @@ REGELER FOR HTML:
                 <!-- Hvilken type indputfelt -->
                 <datalist id="machine">
                     <!-- Diverse muligheder -->
-                    <option>2019112119351753</option>
-                    <option>2019112119351753</option>
-                    <option>2019112119351753</option>
-                    <option>2019112119351753</option>
-                    <option>2019112119351753</option>
+                    <option>HLZ151256</option>
+                    <option>HLZ151257</option>
+                    <option>HLZ151258</option>
+                    <option>HLZ151259</option>
+                    <option>HLZ151260</option>
                     <!-- etc... -->
                 </datalist>
             </form>
@@ -122,40 +142,46 @@ REGELER FOR HTML:
         </aside>
 
         <!-- Sidens faktiske indhold -->
-        <article>
+        <div id="tabs">
             <!-- Navigationen mellem de to faner -->
             <nav>
                 <ul class="flexContainer">
-                    <li id="liBilling" onmouseover="h2Hover()" onclick="billingFunction()"><h2>Billing</h2></li>
-                    <li id="liStatistics" onmouseover="h2Hover()" onclick="statisticsFunction()"><h2>Statistics</h2></li>
+                    <li id="liBilling" onclick="billingFunction()">
+                        <a href="#tabs-1">
+                            <h2>Billing</h2>
+                        </a>
+                    </li>
+                    <li id="liStatistics" onclick="statisticsFunction()">
+                        <a href="#tabs-2">
+                            <h2>Statistics</h2>
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Section med information de anvendte parametre -->
-            <section class="flexContainer">
-                <div class="dataInfo">
+            <!-- article med information de anvendte parametre -->
+            <article id="tabs-1" class="flexContainer">
+                <section class="dataInfo">
                     <p>Location:</p>
                     <p>Machine:</p>
                     <p>Batch:</p>
-                </div>
-                <div class="dataInfo">
+                </section>
+                <section class="dataInfo">
                     <p>Date:</p>
                     <p>Time:</p>
-                </div>
-            </section>
+                </section>
 
-            <!-- Section med det indhold som er tilpasset fanerne -->
-            <section id="changingContent">
-                    <!-- <table>
-                            <col width="15%">
-                            <col width="20%">
-                            <col width="15%">
-                            <col width="10%">
-                            <col width="10%">
-                            <col width="10%">
-                            <col width="10%">
-                            <col width="10%">
-    
+                <section>
+                    <table>
+                        <col width="15%">
+                        <col width="20%">
+                        <col width="15%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+
                         <tr>
                             <th><button type="button" class="btn">Export all remaining invoices</button></th>
                             <th>Distributor</th>
@@ -206,11 +232,34 @@ REGELER FOR HTML:
                             <td>3210</td>
                             <td>2018</td>
                         </tr>
-                    </table> -->
+                    </table>
+
+                </section>
+            </article>
+
+            <!-- article med det indhold som er tilpasset fanerne -->
+            <article id="tabs-2" class="flexContainer">
+                    <section class="dataInfo">
+                            <p>Location:</p>
+                            <p>Machine:</p>
+                            <p>Batch:</p>
+                        </section>
+                        <section class="dataInfo">
+                            <p>Date:</p>
+                            <p>Time:</p>
+                        </section>
+                        <section>
+
+                                <svg class="chart"></svg>
+                                <script src="https://d3js.org/d3.v3.min.js"></script>
+                                <script src="js/diagram.js"></script>
+                        </section>
 
 
-            </section>
-        </article>
+
+            </article>
+
+        </div>
 
     </main>
 
@@ -223,9 +272,6 @@ REGELER FOR HTML:
     <footer>
 
     </footer>
-
-
-
 
 </body>
 

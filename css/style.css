@@ -138,7 +138,7 @@ input[type=text]:hover {
 
 /* Content area
 ..................................................*/
-article {
+div {
     width: 70%;
     border: var(--thickBorder);
     border-top: none;
@@ -147,6 +147,7 @@ article {
 
 /* Navigation
 ............................*/
+#tabs {border: var(--thickBorder);}
 nav ul {
     width: 100%;
     list-style: none;
@@ -163,10 +164,13 @@ nav li {
     border: var(--thickBorder);
     border-bottom: none;
 }
+
 nav li h2{  padding: 3% 0;}
 
 #liBilling{border-left: none;}
 #liStatistics{border-right: none;}
+
+#tabs-1, #tabs-2 {max-height: 100%; border-bottom: none;}
 
 /* nav li h2:hover{transform: scale(1.5);} */
 
@@ -174,7 +178,7 @@ nav li h2{  padding: 3% 0;}
 ............................*/
 .dataInfo{width: 35%;}
 
-section {
+article {
     background-color: var(--white);
     padding: var(--pad);
 }
@@ -222,6 +226,34 @@ table {
 
 /* Statistics
 .....................*/
+
+/* Grafen
+...........*/
+.chart rect {
+    fill: var(--lightBlueFaded);
+  }
+  
+  .chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+  }
+  
+  .chart .label {
+    fill: var(--darkBlue);
+    font: 14px sans-serif;
+    text-anchor: end;
+  }
+  
+  .bar:hover {
+    fill: var(--lightBlue);
+  }
+  
+  .axis path {
+    fill: none;
+    stroke: var(--darkBlue);
+    shape-rendering: crispEdges;
+  }
 
 
 

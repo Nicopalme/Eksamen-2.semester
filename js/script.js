@@ -9,7 +9,7 @@ function billingFunction() {
   let liStat = document.getElementById("liStatistics");
   let liBill = document.getElementById("liBilling");
   // liStat.style.borderBottom = "solid 1px var(--darkBlue)";
-  liBill.style.border = "none";
+ // liBill.style.border = "none";
   liStat.style.backgroundColor = "var(--grey)";
   liBill.style.backgroundColor = "var(--white)";
   liBill.style.fontWeight = "bold";
@@ -22,7 +22,7 @@ function statisticsFunction() {
   let liStat = document.getElementById("liStatistics");
   let liBill = document.getElementById("liBilling");
   // liBill.style.borderBottom = "solid 1px var(--darkBlue)";
-  liStat.style.border = "none";
+  //liStat.style.border = "none";
   liBill.style.backgroundColor = "var(--grey)";
   liStat.style.backgroundColor = "var(--white)";
   liStat.style.fontWeight = "bold";

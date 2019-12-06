@@ -79,7 +79,9 @@ a {
 
 h1 {
     font-size: 1.8em;
+    padding: 3% 0;
     margin-bottom: 1em;
+    text-align: center;
 }
 
 h2 {
@@ -98,6 +100,8 @@ td {
     font-size: 0.8em;
 }
 
+button{font-size: .8em; color: var(--darkBlue); margin: 0 auto; text-align: center;}
+
 /* Flex
 ..................................................*/
 .flexContainer {
@@ -110,7 +114,7 @@ td {
 .........................................................................*/
 header,
 footer {
-    height: 100px;
+    height: 1.5em;
 
 }
 
@@ -181,9 +185,9 @@ div {
 
 /* Navigation
 ............................*/
-#tabs {
+/* #tabs {
     border: var(--thickBorder);
-}
+} */
 
 nav ul {
     width: 100%;
@@ -198,7 +202,8 @@ nav li {
     text-align: center;
 
     background-color: lemonchiffon;
-    border: var(--thickBorder);
+   
+ /* border: var(--thickBorder); */
     border-bottom: none;
 }
 
@@ -217,11 +222,13 @@ nav li a:focus {
 }
 
 #liBilling {
-    border-left: none;
+    border-top: var(--thickBorder);
+    border-right: var(--thickBorder);
 }
 
 #liStatistics {
-    border-right: none;
+    border-top: var(--thickBorder);
+    border-left: var(--thickBorder);
 }
 
 #tabs-1,
@@ -275,8 +282,7 @@ tr:nth-child(even) {
     border: none;
     border-radius: 10px;
     background-color: greenyellow;
-    padding: var(--pad);
-    font-size: 16px;
+    /* padding: var(--pad); */
     cursor: pointer;
     display: inline-block;
 }

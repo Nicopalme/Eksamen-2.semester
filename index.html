@@ -39,7 +39,9 @@ REGELER FOR HTML:
     <link rel="stylesheet" href="/resources/demos/style.css">
 
     <!-- Our stylesheet -->
+    
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
 
 
     <!-- Script til tabs -->
@@ -51,8 +53,12 @@ REGELER FOR HTML:
         });
     </script>
     <!-- Our script -->
+    
     <script src="js/script.js"></script>
-
+    <script src="js/calender.js"></script>
+    <script src="js/diagram.js"></script>
+    
+       
 </head>
 
 
@@ -60,17 +66,12 @@ REGELER FOR HTML:
 
 <body>
 
-
-
-
     <!-- Alt indhold i headeren
 ............................................................. 
 -->
     <header>
 
     </header>
-
-
 
 
     <!-- Det unikke indhold på siden
@@ -117,9 +118,10 @@ REGELER FOR HTML:
 
             <!-- Input for "date and time" -->
             <h3>Date and Time</h3>
-            
-            <!-- Date: <div id="datepicker"></div> -->
-           
+
+            <!-- From and to dates -->
+            <p>From: <input type="text" id="fromDate"> To: <input type="text" id="toDate"></p>
+
                 
             <!-- Input for "batch" -->
             <form action="">
@@ -173,7 +175,7 @@ REGELER FOR HTML:
                 </section>
 
                 <section>
-                    <table>
+                    <table id="AATable">
                         <col width="15%">
                         <col width="20%">
                         <col width="15%">
@@ -190,169 +192,10 @@ REGELER FOR HTML:
                             <th>ALU</th>
                             <th>PET</th>
                             <th>HDPE</th>
+                            <th>Glass</th>
                             <th>Other plastics</th>
                             <th>Other material</th>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="btn">Export invoice</button></td>
-                            <td>Coca-cola</td>
-                            <td>20504</td>
-                            <td>1295</td>
-                            <td>1245</td>
-                            <td>2035</td>
-                            <td>9541</td>
-                            <td>5203</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Pepsi</td>
-                            <td>5230</td>
-                            <td>1250</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Carlsberg</td>
-                            <td>1452</td>
-                            <td>959</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Pepsi</td>
-                            <td>5230</td>
-                            <td>1250</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Carlsberg</td>
-                            <td>1452</td>
-                            <td>959</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Pepsi</td>
-                            <td>5230</td>
-                            <td>1250</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Carlsberg</td>
-                            <td>1452</td>
-                            <td>959</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Pepsi</td>
-                            <td>5230</td>
-                            <td>1250</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Carlsberg</td>
-                            <td>1452</td>
-                            <td>959</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Pepsi</td>
-                            <td>5230</td>
-                            <td>1250</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Carlsberg</td>
-                            <td>1452</td>
-                            <td>959</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Dist</td>
-                            <td>3210</td>
-                            <td>2018</td>
-                        </tr>
+                          </tr>
                     </table>
 
                 </section>

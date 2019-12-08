@@ -168,10 +168,16 @@ input[type=text]:hover {
     outline: 3px solid var(--lightBlue);
 }
 
-
 /* Time and date */
+#fromDate{
+  width: 125px;
+  border:none;
+}
 
-
+#toDate{
+  width: 125px;
+  border:none;
+}
 
 
 /* Content area
@@ -182,6 +188,8 @@ div {
     border-top: none;
     box-shadow: var(--shadow);
 }
+
+
 
 /* Navigation
 ............................*/

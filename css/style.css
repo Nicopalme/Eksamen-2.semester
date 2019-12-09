@@ -55,7 +55,7 @@ summary {
 ..................................................*/
 body {
     font: 12px/18px;
-    font-family: 'Orienta', sans-serif;
+    font-family: 'Arial', sans-serif;
     color: var(--darkBlue);
     /*XXX*/
     background-color: var(--lightlightblue);
@@ -69,25 +69,26 @@ body {
 .dataInfo{font-size: 0.8em; margin-bottom: 0.5em;}
 .dataInfo p{padding-bottom: 0.5em;}
 
-label {
+label, h3 {
     font-size: 1.2em;
-    padding: var(--padtb);
-    margin-top: 1.4em;
 }
-
+::placeholder{font-style: italic;}
 a {
     text-decoration: none;
     color: var(--darkBlue);
 }
 
 h1 {
+    font-style: serif;
     font-size: 1.8em;
+    font-weight: bold;
     padding: 3% 0;
     margin-bottom: 1em;
     text-align: center;
 }
 
 h2 {
+    /* font-family: serif; */
     font-size: 1.8em;
 }
 
@@ -175,19 +176,16 @@ input[type=text]:hover {
 }
 
 
-/* Time and date */
-
-
-
-
 /* Content area
 ..................................................*/
-div {
+#tabs {
     width: 70%;
     border: var(--thickBorder);
     border-top: none;
     box-shadow: var(--shadow);
 }
+
+
 
 /* Navigation
 ............................*/
@@ -247,8 +245,11 @@ nav li a:focus {
 /* Indholdet
 ............................*/
 section{width: 100%;}
+.datepicker-here{width: 80%; margin: 0 auto; padding: 1.5em 0;}
 .dataInfo {
+    padding-top: 2em;
     width: 35%;
+    line-height: 1.5em;
 }
 
 article {

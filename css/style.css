@@ -41,11 +41,11 @@ summary {
     --lightBlue: #40687f;
     --lightBlueFaded: rgba(50, 100, 255, .3);
     --grey: #808184;
-    --white: rgba(255, 255, 255, 0.95);
+    --white: rgba(255, 255, 255, .98);
     --lightlightblue: #eef1f6;
 
-    --pad: .5em 1em;
-    --padtb: 2em 0 0.5em;
+    --pad: 2% 3%;
+    --padtb: 4% 0 2%;
 
     --thickBorder: 3px solid var(--darkBlue);
     --shadow: 0px 0px 25px var(--darkBlue);
@@ -59,6 +59,7 @@ body {
     color: var(--darkBlue);
     /*XXX*/
     background-color: var(--lightlightblue);
+    position: relative;
     background-image: url("../img/logo.svg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -66,8 +67,7 @@ body {
     background-attachment: fixed;
 }
 
-.dataInfo{font-size: 0.8em; margin-bottom: 0.5em;}
-.dataInfo p{padding-bottom: 0.5em;}
+.dataInfo{font-size: 0.8em; line-height: 1.9em;}
 
 label, h3 {
     font-size: 1.2em;
@@ -105,8 +105,6 @@ td {
 }
 
 button{font-size: .8em; color: var(--darkBlue); margin: 0 auto; text-align: center;}
-.noFocus{color: var(--grey);}
-.noFocus:hover{color: var(--darkBlue)}
 
 /* Flex
 ..................................................*/
@@ -130,10 +128,7 @@ footer {
 
 /* Main
 .........................................................................*/
-main {
-    /*FJERN*/
-    height: 600px;
-}
+
 
 
 main {
@@ -183,6 +178,7 @@ input[type=text]:hover {
     border: var(--thickBorder);
     border-top: none;
     box-shadow: var(--shadow);
+    background-color: var(--white);
 }
 
 
@@ -202,8 +198,9 @@ nav ul {
 
 nav li {
     float: left;
-    width: 49.5%;
+    width: 49.7%;
     text-align: center;
+    box-shadow-: ;
 
     background-color: lemonchiffon;
    
@@ -240,25 +237,21 @@ nav li a:focus {
     border: none;
 }
 
-/* nav li h2:hover{transform: scale(1.5);} */
 
 /* Indholdet
 ............................*/
 section{width: 100%;}
-.datepicker-here{width: 80%; margin: 0 auto; padding: 1.5em 0;}
+.datepicker-here{max-width: 100%; margin: 0 auto; padding: 1.5em 0;}
 .dataInfo {
     padding-top: 2em;
-    width: 35%;
-    line-height: 1.5em;
+    padding-bottom: 1em;
+    width: 33%;
+    
 }
 
 article {
-    background-color: var(--white);
-    padding: var(--pad);
-}
+        padding: var(--pad); 
 
-#changingContent {
-    height: 70%;
 }
 
 /* Billing
@@ -285,6 +278,7 @@ th {
 } */
 
 tr:hover{background-color: var(--lightBlueFaded);}
+#tableHeadlines:hover{background-color:transparent;}
 
 
 /* Knapper

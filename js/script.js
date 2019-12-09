@@ -11,7 +11,7 @@ function billingFunction() {
   // liStat.style.borderBottom = "solid 1px var(--darkBlue)";
  // liBill.style.border = "none";
   liStat.style.backgroundColor = "var(--grey)";
-  liBill.style.backgroundColor = "var(--white)";
+  liBill.style.backgroundColor = "transparent";
   liBill.style.fontWeight = "bold";
   liStat.style.fontWeight = "normal";
 }
@@ -24,7 +24,7 @@ function statisticsFunction() {
   // liBill.style.borderBottom = "solid 1px var(--darkBlue)";
   //liStat.style.border = "none";
   liBill.style.backgroundColor = "var(--grey)";
-  liStat.style.backgroundColor = "var(--white)";
+  liStat.style.backgroundColor = "transparent";
   liStat.style.fontWeight = "bold";
   liBill.style.fontWeight = "normal";
  }
@@ -81,3 +81,25 @@ cell9.innerHTML =  result[7];
 }
 };
 $(document).ready(newTable);
+
+
+
+// Sorter tabellen efter søgning
+function sortTable() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("AATable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}

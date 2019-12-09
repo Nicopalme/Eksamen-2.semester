@@ -69,7 +69,7 @@ let cell9 = row.insertCell(8);
 
 let result = sortPricat(pricat[i]);
 
-cell1.innerHTML = "!";
+cell1.innerHTML = '<button type="button" class="btn">Export invoice</button>';
 cell2.innerHTML =  result[0];
 cell3.innerHTML =  result[1];
 cell4.innerHTML =  result[2];

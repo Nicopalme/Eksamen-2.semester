@@ -38,10 +38,15 @@ REGELER FOR HTML:
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
 
+    <!-- CSS til kalender -->
+    <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
+
     <!-- Our stylesheet -->
-    
+
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+
+
 
 
     <!-- Script til tabs -->
@@ -52,13 +57,20 @@ REGELER FOR HTML:
             $("#tabs").tabs();
         });
     </script>
+
+
+    <!-- Script til datapicker -->
+    <script src="js/datepicker.min.js"></script>
+
+    <!-- Include English language -->
+    <script src="js/datepicker.en.js"></script>
+
     <!-- Our script -->
-    
-    <script src="js/script.js"></script>
-    <script src="js/calender.js"></script>
     <script src="js/diagram.js"></script>
-    
-       
+    <script src="js/script.js"></script>
+      
+
+
 </head>
 
 
@@ -117,12 +129,12 @@ REGELER FOR HTML:
             </form>
 
             <!-- Input for "date and time" -->
-            <h3>Date and Time</h3>
+            <h3>Dates</h3>
 
             <!-- From and to dates -->
-            <p>From: <input type="text" id="fromDate"> To: <input type="text" id="toDate"></p>
+            <!-- <p>From: <input type="text" id="fromDate"> To: <input type="text" id="toDate"></p> -->
+            <div class="datepicker-here" data-language="en" data-multiple-dates="true"></div>
 
-                
             <!-- Input for "batch" -->
             <form action="">
                 <!-- Label/skilt -->
@@ -195,8 +207,8 @@ REGELER FOR HTML:
                             <th>Glass</th>
                             <th>Other plastics</th>
                             <th>Other material</th>
-                          </tr>
-                            <td><button type="button" class="btn">Export invoice</button></td>
+                        </tr>
+
                     </table>
 
                 </section>

@@ -1,12 +1,12 @@
 var data = {
   labels: [
-    'resilience', 'maintainability', 'accessibility',
-    'uptime', 'functionality', 'impact'
+    'ALU', 'PET', 'HDPE',
+    'Other plastics', 'Other material'
   ],
   series: [
     {
       label: '2012',
-      values: [4, 8, 15, 16, 23, 42]
+      values: [4, 8, 15, 16, 23]
     },]
 };
 

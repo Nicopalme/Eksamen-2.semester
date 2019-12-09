@@ -66,6 +66,9 @@ body {
     background-attachment: fixed;
 }
 
+.dataInfo{font-size: 0.8em; margin-bottom: 0.5em;}
+.dataInfo p{padding-bottom: 0.5em;}
+
 label {
     font-size: 1.2em;
     padding: var(--padtb);
@@ -101,6 +104,8 @@ td {
 }
 
 button{font-size: .8em; color: var(--darkBlue); margin: 0 auto; text-align: center;}
+.noFocus{color: var(--grey);}
+.noFocus:hover{color: var(--darkBlue)}
 
 /* Flex
 ..................................................*/
@@ -166,6 +171,7 @@ input[type=text] {
 
 input[type=text]:hover {
     outline: 3px solid var(--lightBlue);
+    background-color: var(--lightBlueFaded);
 }
 
 /* Time and date */
@@ -248,6 +254,7 @@ nav li a:focus {
 
 /* Indholdet
 ............................*/
+section{width: 100%;}
 .dataInfo {
     width: 35%;
 }
@@ -269,6 +276,7 @@ article {
 table {
     font-family: arial, sans-serif;
     /* border-collapse: collapse; */
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -279,20 +287,23 @@ th {
     padding: .5em;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
     background-color: var(--lightBlueFaded);
-}
+} */
+
+tr:hover{background-color: var(--lightBlueFaded);}
 
 
 /* Knapper
 ...........*/
 .btn {
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: greenyellow;
-    /* padding: var(--pad); */
+    padding: .5em .5em;
     cursor: pointer;
     display: inline-block;
+    width: 100%;
 }
 
 /* On mouse-over */

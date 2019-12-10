@@ -35,18 +35,17 @@ REGELER FOR HTML:
     <!-- Reset CSS -->
     <link href="css/reset.css" rel="stylesheet">
     <!-- CSS til tabs -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <!-- CSS til kalender -->
     <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
-
     <!-- Our stylesheet -->
-
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+    
 
-
+    <!-- Script til loading -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
     <!-- Script til tabs -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -60,12 +59,11 @@ REGELER FOR HTML:
 
     <!-- Script til datapicker -->
     <script src="js/datepicker.min.js"></script>
-
     <!-- Include English language -->
     <script src="js/datepicker.en.js"></script>
-
-    <!-- Our script -->
+    <!-- Script til diagram -->
     <script src="js/diagram.js"></script>
+    <!-- Our script -->
     <script src="js/script.js"></script>
 
 
@@ -75,11 +73,9 @@ REGELER FOR HTML:
 
 
 <body>
-
     <!-- Alt indhold i headeren
 ............................................................. 
 -->
-<div class="preloader"></div>
     <header>
 
     </header>
@@ -190,10 +186,11 @@ REGELER FOR HTML:
                 <section id="tableSection">
 
                     <table id="AATable">
-                      <thead>
-                                
+                        <thead>
+
                             <tr id="tableHeadlines">
-                                <th class="rowButton"><button type="button" class="btn">Export all remaining invoices</button></th>
+                                <th class="rowButton"><button type="button" class="btn">Export all remaining
+                                        invoices</button></th>
                                 <th class="rowDist">Distributor</th>
                                 <th class="rowTotal">Total</th>
                                 <th class="rowAlu">ALU</th>

@@ -1,10 +1,4 @@
 // JS filen!! Samme regeler som CSS!
-
-//  loadingbar
-$(window).load(function() {
-  $('.preloader').fadeOut('slow');
-});
-
 window.onload = function () {
    billingFunction();
    

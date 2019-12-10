@@ -33,15 +33,28 @@ function statisticsFunction() {
 
 // Tabelfunktionen
 let pricat =[
-  "TOMRA;738;157;315;132;245;0;0;",
-  "5Boro;738;157;315;132;245;0;0;",
-  "CocaCola;738;157;315;132;245;0;0;",
-  "Heinekin;738;157;315;132;245;0;0;",
-  "Corona;738;157;315;132;245;0;0;",
-  "Carlsberg;738;157;315;132;245;0;0;"
+  "CocaCola;738;157;315;132;245;0;0",
+  "Newcastle;249;33;0;0;216;0;0",
+  "Heineken;591;125;104;0;312;0;50",
+  "Carlsberg;576;327;123;0;120;6;0",
+  "Corona;327;126;0;0;201;0;0",
+  "Sommersby;86;45;0;0;54;0;0",
+  "Cristal;78;13;28;7;15;15;0",
+  "Fosters;146;75;17;0;54;0;0",
+  "Guinness;327;126;0;0;201;0;0",
+  "Miller;86;45;0;0;54;0;0",
+  "Pepsi;591;175;50;0;312;0;54",
+  "RedBull;591;125;104;0;312;0;50",
+  "Smirnoff;159;0;0;0;148;0;11",
+  "Sol;146;75;17;0;54;0;0"
 ];
 
-sortPricat(pricat[0])
+// let newFile = new File('../totalPricat.txt');
+// let reader = new FileReader();
+// pricat.readAsText(newFile);
+
+
+sortPricat(pricat[0]);
 
 function sortPricat(pricatLine){
  let result = pricatLine.split(";");

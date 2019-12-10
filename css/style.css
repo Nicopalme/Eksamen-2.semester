@@ -133,11 +133,11 @@ button {
 
 /* Header
 .........................................................................*/
-header,
+/* header,
 footer {
     height: 1.5em;
 
-}
+} */
 
 /*FJERN*/
 
@@ -150,7 +150,9 @@ footer {
 
 main {
     justify-content: space-around;
+    margin-top: 7em;
 }
+
 
 
 /* Loadingbar................................................................ */
@@ -229,7 +231,7 @@ nav li {
     float: left;
     width: 49.7%;
     text-align: center;
-    box-shadow-: ;
+    
 
     background-color: lemonchiffon;
 

@@ -23,12 +23,6 @@ let pricat =[
   "Sol;146;75;17;0;54;0;0"
 ];
 
-// let newFile = new File('../totalPricat.txt');
-// let reader = new FileReader();
-// pricat.readAsText(newFile);
-
-
-sortPricat(pricat[0]);
 
 function sortPricat(pricatLine){
  let result = pricatLine.split(";");

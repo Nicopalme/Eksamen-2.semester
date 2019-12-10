@@ -157,7 +157,7 @@ button {
 
 main {
     justify-content: space-around;
-    height: 100vh;
+    height: 100%;
     
 }
 
@@ -167,7 +167,7 @@ main {
 aside {
     width: 18%;
     background-color: var(--white);
-    height: 75vh;
+    height: 75%;
     padding: var(--pad);
     border: var(--thickBorder);
     box-shadow: var(--shadow);
@@ -200,7 +200,7 @@ input[type=text]:hover {
     border-top: none;
     box-shadow: var(--shadow);
     background-color: var(--white);
-    height: 83.4vh;
+    height: 84%;
 }
 
 

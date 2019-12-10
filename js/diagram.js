@@ -1,17 +1,17 @@
 var data = {
   labels: [
-    'ALU', 'PET', 'HDPE',
+    'ALU', 'PET', 'HDPE', 'Glass',
     'Other plastics', 'Other material'
   ],
   series: [
     {
       label: '2012',
-      values: [4, 8, 15, 16, 23]
+      values: [1447, 758, 139, 2298, 75, 165]
     },]
 };
 
-var chartWidth       = 300,
-    barHeight        = 20,
+var chartWidth       = 700,
+    barHeight        = 50,
     groupHeight      = barHeight * data.series.length,
     gapBetweenGroups = 10,
     spaceForLabels   = 150,

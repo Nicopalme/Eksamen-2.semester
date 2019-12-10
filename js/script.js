@@ -1,5 +1,10 @@
 // JS filen!! Samme regeler som CSS!
 
+//  loadingbar
+$(window).load(function() {
+  $('.preloader').fadeOut('slow');
+});
+
 window.onload = function () {
    billingFunction();
 }
@@ -33,16 +38,16 @@ function statisticsFunction() {
 
 // Tabelfunktionen
 let pricat =[
-  "CocaCola;738;157;315;132;245;0;0",
-  "Newcastle;249;33;0;0;216;0;0",
+  "CocaCola;738;157;315;132;245;13;0",
+  "Newcastle;249;33;0;0;216;7;0",
   "Heineken;591;125;104;0;312;0;50",
   "Carlsberg;576;327;123;0;120;6;0",
-  "Corona;327;126;0;0;201;0;0",
-  "Sommersby;86;45;0;0;54;0;0",
+  "Corona;327;126;0;0;201;9;0",
+  "Sommersby;86;45;0;0;54;12;0",
   "Cristal;78;13;28;7;15;15;0",
   "Fosters;146;75;17;0;54;0;0",
   "Guinness;327;126;0;0;201;0;0",
-  "Miller;86;45;0;0;54;0;0",
+  "Miller;86;45;0;0;54;13;0",
   "Pepsi;591;175;50;0;312;0;54",
   "RedBull;591;125;104;0;312;0;50",
   "Smirnoff;159;0;0;0;148;0;11",

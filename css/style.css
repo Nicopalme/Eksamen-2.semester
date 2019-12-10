@@ -164,10 +164,10 @@ main {
     height: 100%;
     z-index: 9999;
     background-image: url('../images/default.gif');
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-color: #FFF;
     background-position: center;
- }
+}
 
 
 
@@ -231,7 +231,7 @@ nav li {
     float: left;
     width: 49.7%;
     text-align: center;
-    
+
 
     background-color: lemonchiffon;
 

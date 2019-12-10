@@ -7,7 +7,7 @@ $(window).load(function() {
 
 window.onload = function () {
    billingFunction();
-   
+    
 }
 
 // Tabelfunktionen
@@ -28,6 +28,9 @@ let pricat =[
   "Smirnoff;159;0;0;0;148;0;11",
   "Sol;146;75;17;0;54;0;0"
 ];
+
+
+
 
 // let newFile = new File('../totalPricat.txt');
 // let reader = new FileReader();
@@ -76,12 +79,73 @@ cell9.innerHTML =  result[7];
 $(document).ready(newTable);
 
 
-function machineOption() {
-for(let i=0; i<pricat.length; i++){
-machine = document.getElementById("machine");
-machine.getElementsByTagName("option").innerHTML = result[8];
+
+
+// MNJ TEST
+let pricatMNJ =[
+  //Location[0];Machine[1];Batch[2];Distributor[3];Material[4];Color[5]
+  "Buffalo;HLZ151256;2019112119351753;CocaCola;1;15",
+  "Buffalo;HLZ151256;2019112119351753;Newcastle;1;15",
+  "Buffalo;HLZ151256;2019112119351754;Heineken;1;15",
+  "Rochester;HLZ151245;2019112119351796;Carlsberg;1;15",
+  "Rochester;HLZ151245;2019112119351796;Corona;1;15",
+  "Syracuse;HLZ151275;2019112119351712;Sommersby;1;15",
+  "Syracuse;HLZ151275;2019112119351712;Cristal;1;15",
+  "Rochester;HLZ151246;2019112119351740;Fosters;1;15",
+  "Syracuse;HLZ151275;2019112119351712;Guinness;1;15",
+  "Rochester;HLZ151246;2019112119351740;Miller;1;15",
+  "Syracuse;HLZ151276;2019112119351777;Pepsi;1;15",
+  "Syracuse;HLZ151276;2019112119351777;RedBull;1;15",
+  "Rochester;HLZ151245;2019112119351799;Smirnoff;1;15",
+  "Buffalo;HLZ151256;2019112119351754;Sol;1;15"
+];
+
+
+
+// function createOption() {
+//   var x = document.getElementById("maschine");
+//   var option = document.createElement("option");
+//   option.text = "Kiwi";
+//   x.add(option);
+// }
+
+sortPricatMNJ(pricatMNJ[0]);
+
+function sortPricatMNJ(pricatMNJLine){
+ let resultMNJ = pricatMNJLine.split(";");
+ return resultMNJ;
+};
+
+
+function newOption(){
+
+for(let i=0; i<pricatMNJ.length; i++){
+  let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
+  var x = document.getElementById("machine");
+  var option = document.createElement("option");
+  option.text = resultMNJ[1];
+  x.add(option);
+
 }
 };
+$(document).ready(newOption);
+
+
+function myFunction() {
+  var x = document.getElementById("machine");
+  var option = document.createElement("option");
+  option.text = "Kiwi";
+  x.add(option);
+}
+
+function myFunc(){
+var options = '';
+
+  for(var i = 0; i < pricatMNJ.length; i++)
+    options += '<option value="'+pricatMNJ[i]+'" />';
+
+  document.getElementById('machine').innerHTML = options;
+}
 
 
 

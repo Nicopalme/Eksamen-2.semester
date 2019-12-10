@@ -19,6 +19,8 @@ REGELER FOR HTML:
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
+
+
     <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
@@ -34,9 +36,10 @@ REGELER FOR HTML:
 
     <!-- Reset CSS -->
     <link href="css/reset.css" rel="stylesheet">
+
     <!-- CSS til tabs -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
     <!-- CSS til kalender -->
     <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
@@ -114,17 +117,17 @@ REGELER FOR HTML:
                 <!-- Label/skilt -->
                 <label for="machineForm">Machine:</label>
                 <!-- Indstillinger for input -->
-                <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine">
+                <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine" onclick="myFunction()">
                 <!-- Hvilken type indputfelt -->
-                <datalist id="machine">
+                <select id="machine" required>
                     <!-- Diverse muligheder -->
-                    <option>HLZ151256</option>
-                    <option>HLZ151257</option>
+                    <option value="" selected class="placeholder">Choose Machine</option>
+                    <!-- <option>HLZ151257</option>
                     <option>HLZ151258</option>
                     <option>HLZ151259</option>
-                    <option>HLZ151260</option>
+                    <option>HLZ151260</option> -->
                     <!-- etc... -->
-                </datalist>
+                    </select>
             </form>
 
             <!-- Input for "date and time" -->

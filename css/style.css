@@ -37,7 +37,8 @@ summary {
 ..................................................*/
 /* CSS variabler med farverne */
 :root {
-    --darkBlue: #214050;
+    /* --darkBlue: #214050; */
+    --darkBlue: #204050;
     /* --lightBlue: #40687f; */
     /* --lightBlue: #1c6881; */
     --lightBlue: #1c6881;
@@ -46,7 +47,8 @@ summary {
     --grey: #808184;
     --white: rgba(255, 255, 255, .95);
     --lightlightblue: #eef1f6;
-    --green: rgba(111, 211, 38, .8);
+    /* --green: rgba(111, 211, 38, .8); */
+    --green: #1e7a29;
 
     --pad: 2% 3%;
     --padtb: 4% 0 2%;
@@ -61,7 +63,7 @@ body {
     font: 12px/18px;
     font-family: 'Arial', sans-serif;
     color: var(--darkBlue);
-    /*XXX*/
+
     background-color: var(--lightlightblue);
     position: relative;
     background-image: url("../img/logo.svg");
@@ -69,6 +71,14 @@ body {
     background-repeat: no-repeat;
     background-position: right top;
     background-attachment: fixed;
+
+
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
 }
 
 .dataInfo {
@@ -128,18 +138,21 @@ button {
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
+/* .fullHeight {
+    height: 80%;
+} */
 
 /* Header
 .........................................................................*/
-/* header,
+header,
 footer {
     height: 1.5em;
 
-} */
+}
 
-/*FJERN*/
 
 
 
@@ -150,6 +163,7 @@ footer {
 
 main {
     justify-content: space-around;
+    height: 90vh;
     margin-top: 7em;
 }
 
@@ -177,7 +191,7 @@ main {
 aside {
     width: 18%;
     background-color: var(--white);
-    height: 100%;
+    height: 90vh;
     padding: var(--pad);
     border: var(--thickBorder);
     box-shadow: var(--shadow);
@@ -210,6 +224,7 @@ input[type=text]:hover {
     border-top: none;
     box-shadow: var(--shadow);
     background-color: var(--white);
+    height: 90vh;
 }
 
 
@@ -273,6 +288,7 @@ nav li a:focus {
 ............................*/
 section {
     width: 100%;
+
 }
 
 .datepicker-here {
@@ -290,31 +306,52 @@ section {
 
 article {
     padding: var(--pad);
-
-}
+  }
 
 /* Billing
 .....................*/
 
 /* Tabellen
 ...........*/
+#tableSection {
+    height: 20vh;
+    /* overflow-x: scroll; */
+    /* overflow-x: auto; */
+    overflow-y: scroll;
+   
+}
+
+
 table {
     font-family: arial, sans-serif;
     /* border-collapse: collapse; */
     margin: 0 auto;
     width: 100%;
-}
+    table-layout: fixed;
 
-td,
-th {
+}
+/* tr{ display: block;
+    position: relative;
+
+width: 100%;} */
+
+    td:nth-child(1), th:nth-child(1) { width: 15%; }
+    td:nth-child(2), th:nth-child(2) { width: 15%; }
+    td:nth-child(3), th:nth-child(3) { width: 15%; }
+    td:nth-child(4), th:nth-child(4) { width: 10%; }
+    td:nth-child(5), th:nth-child(5) { width: 10%; }
+    td:nth-child(6), th:nth-child(6) { width: 10%; }
+    td:nth-child(7), th:nth-child(7) { width: 10%; }
+    td:nth-child(8), th:nth-child(8) { width: 10%; }
+    td:nth-child(9), th:nth-child(9) { width: 15%; }
+
+
+th, td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: .5em;
+  
 }
-
-/* tr:nth-child(even) {
-    background-color: var(--lightBlueFaded);
-} */
 
 tr:hover {
     background-color: var(--lightBlueFaded);
@@ -328,12 +365,11 @@ tr:hover {
 /* Knapper
 ...........*/
 .btn {
-    /* border: none; */
-    border: 2px solid var(--green);
+    border: none;
     border-radius: 5px;
-    /* background-color: var(--green); */
-    background-color: transparent;
+    background-color: var(--green);
     padding: .5em .5em;
+    /* margin: .5em; */
     cursor: pointer;
     display: inline-block;
     width: 100%;

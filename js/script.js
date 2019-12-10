@@ -9,34 +9,8 @@ window.onload = function () {
    billingFunction();
 }
 
-
-function billingFunction() {
-  let liStat = document.getElementById("liStatistics");
-  let liBill = document.getElementById("liBilling");
-  // liStat.style.borderBottom = "solid 1px var(--darkBlue)";
- // liBill.style.border = "none";
-  liStat.style.backgroundColor = "var(--grey)";
-  liBill.style.backgroundColor = "var(--white)";
-  liBill.style.fontWeight = "bold";
-  liStat.style.fontWeight = "normal";
-}
-
-
-// // Det der sker, når man trykker på "Statistics"
-function statisticsFunction() {
-  let liStat = document.getElementById("liStatistics");
-  let liBill = document.getElementById("liBilling");
-  // liBill.style.borderBottom = "solid 1px var(--darkBlue)";
-  //liStat.style.border = "none";
-  liBill.style.backgroundColor = "var(--grey)";
-  liStat.style.backgroundColor = "var(--white)";
-  liStat.style.fontWeight = "bold";
-  liBill.style.fontWeight = "normal";
- }
-
-// Time and date kalender med mulighed for at vælge flere datoer
-
 // Tabelfunktionen
+//......................................................................................
 let pricat =[
   "CocaCola;738;157;315;132;245;13;0",
   "Newcastle;249;33;0;0;216;7;0",
@@ -99,3 +73,59 @@ cell9.innerHTML =  result[7];
 }
 };
 $(document).ready(newTable);
+
+
+function machineOption() {
+for(let i=0; i<pricat.length; i++){
+machine = document.getElementById("machine");
+machine.getElementsByTagName("option").innerHTML = result[8];
+}
+};
+// Sorter tabellen efter søgning
+function sortTable() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("AATable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+// Tabfunktioner
+//...................................................................................
+function billingFunction() {
+  let liStat = document.getElementById("liStatistics");
+  let liBill = document.getElementById("liBilling");
+  // liStat.style.borderBottom = "solid 1px var(--darkBlue)";
+ // liBill.style.border = "none";
+  liStat.style.backgroundColor = "var(--grey)";
+  liBill.style.backgroundColor = "transparent";
+  liBill.style.fontWeight = "bold";
+  liStat.style.fontWeight = "normal";
+}
+
+
+// // Det der sker, når man trykker på "Statistics"
+function statisticsFunction() {
+  let liStat = document.getElementById("liStatistics");
+  let liBill = document.getElementById("liBilling");
+  // liBill.style.borderBottom = "solid 1px var(--darkBlue)";
+  //liStat.style.border = "none";
+  liBill.style.backgroundColor = "var(--grey)";
+  liStat.style.backgroundColor = "transparent";
+  liStat.style.fontWeight = "bold";
+  liBill.style.fontWeight = "normal";
+ }
+
+
+

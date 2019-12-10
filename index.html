@@ -184,8 +184,10 @@ REGELER FOR HTML:
                     <p>Date:</p>
                     <p>Time:</p>
                 </section>
+                <section class="dataInfo">   <input type="text" id="myInput" onkeyup="sortTable()" placeholder="Search for distributors.." title="Type in a name" autocomplete="off"></section>
 
                 <section>
+                     
                     <table id="AATable">
                         <col width="15%">
                         <col width="15%">
@@ -196,7 +198,7 @@ REGELER FOR HTML:
                         <col width="150">
                         <col width="100"> -->
 
-                        <tr>
+                        <tr id="tableHeadlines">
                             <th><button type="button" class="btn">Export all remaining invoices</button></th>
                             <th>Distributor</th>
                             <th>Total</th>

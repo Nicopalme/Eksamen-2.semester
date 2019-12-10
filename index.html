@@ -117,7 +117,7 @@ REGELER FOR HTML:
                 <!-- Indstillinger for input -->
                 <!-- <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine" onclick="myFunction()"> -->
                 <!-- Hvilken type indputfelt -->
-                <select id="machine" required>
+                <select id="machine" required onchange="curMachine()">
                     <!-- Diverse muligheder -->
                     <option value="" selected class="placeholder">Choose Machine</option>
                     <!-- <option>HLZ151257</option>
@@ -173,8 +173,8 @@ REGELER FOR HTML:
             <!-- article med information de anvendte parametre -->
             <article id="tabs-1" class="flexContainer">
                 <section class="dataInfo">
-                    <p>Location:</p>
-                    <p>Machine:</p>
+                    <p id="curLocation">Location:</p>
+                    <p id="curMachine">Machine:</p>
                     <p>Batch:</p>
                 </section>
                 <section class="dataInfo">

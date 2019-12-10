@@ -165,6 +165,16 @@ function newOptionLocation() {
 $(document).ready(newOptionLocation);
 
 
+// Tekst hentet fra inputfelterne
+// ..........................................................
+function curMachine() {
+
+  var x = document.getElementById("machine").value;
+  document.getElementById("curMachine").innerHTML = 'Machine: ' + '<bold>' + x + '</bold>'; 
+};
+
+
+
 // Options hentet fra pricat til batch input feltet
 // ..........................................................
 function newOptionBatch() {

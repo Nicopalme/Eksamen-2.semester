@@ -68,7 +68,7 @@ REGELER FOR HTML:
     <!-- Our script -->
     <script src="js/diagram.js"></script>
     <script src="js/script.js"></script>
-      
+
 
 
 </head>
@@ -92,7 +92,7 @@ REGELER FOR HTML:
     <main class="flexContainer">
 
         <!-- Sidebar med inputfelter-->
-        <aside>
+        <aside class="fullHeight">
 
             <!-- Input for "location" -->
             <form>
@@ -111,7 +111,7 @@ REGELER FOR HTML:
             </form>
 
             <!-- Input for "machine" -->
-            <form action="">
+            <form>
                 <!-- Label/skilt -->
                 <label for="machineForm">Machine:</label>
                 <!-- Indstillinger for input -->
@@ -136,7 +136,7 @@ REGELER FOR HTML:
             <div class="datepicker-here" data-language="en" data-multiple-dates="true"></div>
 
             <!-- Input for "batch" -->
-            <form action="">
+            <form>
                 <!-- Label/skilt -->
                 <label for="batchForm">Batch:</label>
                 <!-- Indstillinger for input -->
@@ -157,7 +157,7 @@ REGELER FOR HTML:
         </aside>
 
         <!-- Sidens faktiske indhold -->
-        <div id="tabs">
+        <div id="tabs" class="fullHeight">
             <!-- Navigationen mellem de to faner -->
             <nav>
                 <ul class="flexContainer">
@@ -185,31 +185,29 @@ REGELER FOR HTML:
                     <p>Date:</p>
                     <p>Time:</p>
                 </section>
-                <section class="dataInfo">   <input type="text" id="myInput" onkeyup="sortTable()" placeholder="Search for distributors.." title="Type in a name" autocomplete="off"></section>
+                <section class="dataInfo"> <input type="text" id="myInput" onkeyup="sortTable()"
+                        placeholder="Search for distributors.." title="Type in a name" autocomplete="off"></section>
 
-                <section>
-                     
+                <section id="tableSection">
+
                     <table id="AATable">
-                        <col width="15%">
-                        <col width="15%">
-                        <col width="15%">
-                        <!-- <col width="10%">
-                        <col width="10%">
-                        <col width="10%">
-                        <col width="150">
-                        <col width="100"> -->
+                      <thead>
+                                
+                            <tr id="tableHeadlines">
+                                <th class="rowButton"><button type="button" class="btn">Export all remaining invoices</button></th>
+                                <th class="rowDist">Distributor</th>
+                                <th class="rowTotal">Total</th>
+                                <th class="rowAlu">ALU</th>
+                                <th class="rowPet">PET</th>
+                                <th class="rowHdpe">HDPE</th>
+                                <th class="rowGlass">Glass</th>
+                                <th class="rowOtherP">Other plastics</th>
+                                <th class="rowOtherM">Other material</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
 
-                        <tr id="tableHeadlines">
-                            <th><button type="button" class="btn">Export all remaining invoices</button></th>
-                            <th>Distributor</th>
-                            <th>Total</th>
-                            <th>ALU</th>
-                            <th>PET</th>
-                            <th>HDPE</th>
-                            <th>Glass</th>
-                            <th>Other plastics</th>
-                            <th>Other material</th>
-                        </tr>
+                        </tbody>
 
                     </table>
 

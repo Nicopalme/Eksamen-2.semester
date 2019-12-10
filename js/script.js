@@ -2,6 +2,7 @@
 
 window.onload = function () {
    billingFunction();
+   
 }
 
 // Tabelfunktionen
@@ -38,10 +39,10 @@ function sortPricat(pricatLine){
 
 function newTable(){
 
-let table = document.getElementById("AATable");
+let table = document.getElementById("tableBody");
 
 for(let i=0; i<pricat.length; i++){
-let row = table.insertRow(i+1);
+let row = table.insertRow(i);
 
 let cell1 = row.insertCell(0);
 let cell2 = row.insertCell(1);
@@ -76,7 +77,11 @@ machine = document.getElementById("machine");
 machine.getElementsByTagName("option").innerHTML = result[8];
 }
 };
+
+
+
 // Sorter tabellen efter søgning
+//...................................................................
 function sortTable() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");

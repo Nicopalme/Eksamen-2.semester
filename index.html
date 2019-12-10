@@ -100,24 +100,22 @@ REGELER FOR HTML:
             <form>
                 <h1>Company name</h1>
                 <!-- Label/skilt -->
-                <label for="locationForm">Location:</label>
+                <label for="location">Location:</label>
                 <!-- Indstillinger for input -->
-                <input type="text" name="location" id="locationForm" list="locations" placeholder="Choose location">
+                <!-- <input type="text" name="location" id="locationForm" list="locations" placeholder="Choose location"> -->
                 <!-- Hvilken type indputfelt -->
-                <datalist id="locations">
+                <select id="locations" required>
                     <!-- Diverse muligheder -->
-                    <option value="Buffalo">
-                    <option value="Rochester">
-                    <option value="Syracuse">
-                </datalist>
+                    <option value="" selected class="placeholder">Choose Location</option>
+                </select>
             </form>
 
             <!-- Input for "machine" -->
             <form>
                 <!-- Label/skilt -->
-                <label for="machineForm">Machine:</label>
+                <label for="machine">Machine:</label>
                 <!-- Indstillinger for input -->
-                <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine" onclick="myFunction()">
+                <!-- <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine" onclick="myFunction()"> -->
                 <!-- Hvilken type indputfelt -->
                 <select id="machine" required>
                     <!-- Diverse muligheder -->
@@ -140,19 +138,15 @@ REGELER FOR HTML:
             <!-- Input for "batch" -->
             <form>
                 <!-- Label/skilt -->
-                <label for="batchForm">Batch:</label>
+                <label for="batch">Batch:</label>
                 <!-- Indstillinger for input -->
-                <input type="text" name="team" id="batchForm" list="batch" placeholder="Choose batch">
+                <!-- <input type="text" name="team" id="batchForm" list="batch" placeholder="Choose batch"> -->
                 <!-- Hvilken type indputfelt -->
-                <datalist id="batch">
+                <select id="batch" required>
                     <!-- Diverse muligheder -->
-                    <option>2019112119351753</option>
-                    <option>2019112119351754</option>
-                    <option>2019112119351755</option>
-                    <option>2019112119351756</option>
-                    <option>2019112119351757</option>
+                    <option value="" selected class="placeholder">Choose Batch</option>
                     <!-- etc... -->
-                </datalist>
+                </select>
             </form>
 
 

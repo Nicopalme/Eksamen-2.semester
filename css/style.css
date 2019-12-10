@@ -38,11 +38,15 @@ summary {
 /* CSS variabler med farverne */
 :root {
     --darkBlue: #214050;
-    --lightBlue: #40687f;
+    /* --lightBlue: #40687f; */
+    /* --lightBlue: #1c6881; */
+    --lightBlue: #1c6881;
     --lightBlueFaded: rgba(50, 100, 255, .3);
+    /* --lightBlueFaded: rgba(64, 104, 128, .3); */
     --grey: #808184;
-    --white: rgba(255, 255, 255, .98);
+    --white: rgba(255, 255, 255, .95);
     --lightlightblue: #eef1f6;
+    --green: rgba(111, 211, 38, .8);
 
     --pad: 2% 3%;
     --padtb: 4% 0 2%;
@@ -67,12 +71,20 @@ body {
     background-attachment: fixed;
 }
 
-.dataInfo{font-size: 0.8em; line-height: 1.9em;}
+.dataInfo {
+    font-size: 0.8em;
+    line-height: 1.9em;
+}
 
-label, h3 {
+label,
+h3 {
     font-size: 1.2em;
 }
-::placeholder{font-style: italic;}
+
+::placeholder {
+    font-style: italic;
+}
+
 a {
     text-decoration: none;
     color: var(--darkBlue);
@@ -104,7 +116,12 @@ td {
     font-size: 0.8em;
 }
 
-button{font-size: .8em; color: var(--darkBlue); margin: 0 auto; text-align: center;}
+button {
+    font-size: .8em;
+    color: var(--darkBlue);
+    margin: 0 auto;
+    text-align: center;
+}
 
 /* Flex
 ..................................................*/
@@ -203,8 +220,8 @@ nav li {
     box-shadow-: ;
 
     background-color: lemonchiffon;
-   
- /* border: var(--thickBorder); */
+
+    /* border: var(--thickBorder); */
     border-bottom: none;
 }
 
@@ -240,17 +257,25 @@ nav li a:focus {
 
 /* Indholdet
 ............................*/
-section{width: 100%;}
-.datepicker-here{max-width: 100%; margin: 0 auto; padding: 1.5em 0;}
+section {
+    width: 100%;
+}
+
+.datepicker-here {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1.5em 0;
+}
+
 .dataInfo {
     padding-top: 2em;
     padding-bottom: 1em;
     width: 33%;
-    
+
 }
 
 article {
-        padding: var(--pad); 
+    padding: var(--pad);
 
 }
 
@@ -277,16 +302,23 @@ th {
     background-color: var(--lightBlueFaded);
 } */
 
-tr:hover{background-color: var(--lightBlueFaded);}
-#tableHeadlines:hover{background-color:transparent;}
+tr:hover {
+    background-color: var(--lightBlueFaded);
+}
+
+#tableHeadlines:hover {
+    background-color: transparent;
+}
 
 
 /* Knapper
 ...........*/
 .btn {
-    border: none;
+    /* border: none; */
+    border: 2px solid var(--green);
     border-radius: 5px;
-    background-color: greenyellow;
+    /* background-color: var(--green); */
+    background-color: transparent;
     padding: .5em .5em;
     cursor: pointer;
     display: inline-block;
@@ -295,7 +327,7 @@ tr:hover{background-color: var(--lightBlueFaded);}
 
 /* On mouse-over */
 .btn:hover {
-    background: darkgreen;
+    background: var(--green);
 }
 
 /* Statistics

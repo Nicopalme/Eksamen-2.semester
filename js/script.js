@@ -4,41 +4,15 @@ window.onload = function () {
    billingFunction();
 }
 
-
-function billingFunction() {
-  let liStat = document.getElementById("liStatistics");
-  let liBill = document.getElementById("liBilling");
-  // liStat.style.borderBottom = "solid 1px var(--darkBlue)";
- // liBill.style.border = "none";
-  liStat.style.backgroundColor = "var(--grey)";
-  liBill.style.backgroundColor = "transparent";
-  liBill.style.fontWeight = "bold";
-  liStat.style.fontWeight = "normal";
-}
-
-
-// // Det der sker, når man trykker på "Statistics"
-function statisticsFunction() {
-  let liStat = document.getElementById("liStatistics");
-  let liBill = document.getElementById("liBilling");
-  // liBill.style.borderBottom = "solid 1px var(--darkBlue)";
-  //liStat.style.border = "none";
-  liBill.style.backgroundColor = "var(--grey)";
-  liStat.style.backgroundColor = "transparent";
-  liStat.style.fontWeight = "bold";
-  liBill.style.fontWeight = "normal";
- }
-
-// Time and date kalender med mulighed for at vælge flere datoer
-
 // Tabelfunktionen
+//......................................................................................
 let pricat =[
-  "TOMRA;738;157;315;132;245;0;0;",
-  "5Boro;738;157;315;132;245;0;0;",
-  "CocaCola;738;157;315;132;245;0;0;",
-  "Heinekin;738;157;315;132;245;0;0;",
-  "Corona;738;157;315;132;245;0;0;",
-  "Carlsberg;738;157;315;132;245;0;0;"
+  "TOMRA;738;157;315;132;245;0;0;HLZ151256;",
+  "5Boro;738;157;315;132;245;0;0;HLZ151256;",
+  "CocaCola;738;157;315;132;245;0;0;HLZ151256;",
+  "Heinekin;738;157;315;132;245;0;0;HLZ151256;",
+  "Corona;738;157;315;132;245;0;0;HLZ151256;",
+  "Carlsberg;738;157;315;132;245;0;0;HLZ151256;"
 ];
 
 sortPricat(pricat[0])
@@ -83,7 +57,12 @@ cell9.innerHTML =  result[7];
 $(document).ready(newTable);
 
 
-
+function machineOption() {
+for(let i=0; i<pricat.length; i++){
+machine = document.getElementById("machine");
+machine.getElementsByTagName("option").innerHTML = result[8];
+}
+};
 // Sorter tabellen efter søgning
 function sortTable() {
   var input, filter, table, tr, td, i, txtValue;
@@ -103,3 +82,32 @@ function sortTable() {
     }       
   }
 }
+
+// Tabfunktioner
+//...................................................................................
+function billingFunction() {
+  let liStat = document.getElementById("liStatistics");
+  let liBill = document.getElementById("liBilling");
+  // liStat.style.borderBottom = "solid 1px var(--darkBlue)";
+ // liBill.style.border = "none";
+  liStat.style.backgroundColor = "var(--grey)";
+  liBill.style.backgroundColor = "transparent";
+  liBill.style.fontWeight = "bold";
+  liStat.style.fontWeight = "normal";
+}
+
+
+// // Det der sker, når man trykker på "Statistics"
+function statisticsFunction() {
+  let liStat = document.getElementById("liStatistics");
+  let liBill = document.getElementById("liBilling");
+  // liBill.style.borderBottom = "solid 1px var(--darkBlue)";
+  //liStat.style.border = "none";
+  liBill.style.backgroundColor = "var(--grey)";
+  liStat.style.backgroundColor = "transparent";
+  liStat.style.fontWeight = "bold";
+  liBill.style.fontWeight = "normal";
+ }
+
+
+

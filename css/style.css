@@ -50,8 +50,7 @@ summary {
     /* --green: rgba(111, 211, 38, .8); */
     --green: #90CE67;
 
-    --pad: 2% 3%;
-    --padtb: 4% 0 2%;
+    --pad: .5em 1.5em;
 
     --thickBorder: 3px solid var(--darkBlue);
     --shadow: 0px 0px 25px var(--darkBlue);
@@ -149,12 +148,8 @@ button {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
 }
 
-/* .fullHeight {
-    height: 80%;
-} */
 
 /* Header
 .........................................................................*/
@@ -175,16 +170,14 @@ main {
 /* Sidebar
 ..................................................*/
 aside {
-    width: 18%;
+    width: 20%;
     background-color: var(--white);
-    height: 75%;
-    padding: var(--pad);
+    height: 90vh;
     border: var(--thickBorder);
     box-shadow: var(--shadow);
-
-
-
 }
+
+.padding{padding: var(--pad);}
 
 input[type=text], select {
     width: 100%;
@@ -216,7 +209,7 @@ select[disabled], select:disabled{
     border-top: none;
     box-shadow: var(--shadow);
     background-color: var(--white);
-    height: 84%;
+    height: 90vh;
 }
 
 
@@ -236,7 +229,7 @@ nav ul {
 
 nav li {
     float: left;
-    width: 49.5%;
+    width: 49.7%;
     text-align: center;
 
 
@@ -283,11 +276,7 @@ section {
 
 }
 
-.datepicker-here {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 1.5em 0;
-}
+.datepicker{max-width: 100%; margin: 0 auto;}
 
 .dataInfo {
     padding-top: 2em;

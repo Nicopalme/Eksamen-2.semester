@@ -1,4 +1,5 @@
-/* Meyers reset*/
+/* Meyers reset
+.........................................................................*/
 article,
 aside,
 details,
@@ -14,6 +15,7 @@ summary {
     display: block;
 }
 
+
 /* CSS struktur
 .........................................................................*/
 /* REGELER FOR CSS:
@@ -24,21 +26,15 @@ summary {
 */
 
 
-
-/* Generelt
-.........................................................................*/
-/* Font
+/* Generel
 .........................................................................*/
 
-@import url('https://fonts.googleapis.com/css?family=Orienta&display=swap');
 
-
-/* Farver
+/* CSS variables - Color, padding, border & shadow
 ..................................................*/
-/* CSS variabler med farverne */
 :root {
-    /* --darkBlue: #214050; */
-    --darkBlue: #204050;
+    /* Color variables */
+    --darkBlue: #214050;
     /* --lightBlue: #40687f; */
     /* --lightBlue: #1c6881; */
     --lightBlue: #1c6881;
@@ -47,16 +43,20 @@ summary {
     --grey: #808184;
     --white: rgba(255, 255, 255, .95);
     --lightlightblue: #eef1f6;
-    /* --green: rgba(111, 211, 38, .8); */
     --green: #90CE67;
 
+    /* Padding variable */
     --pad: .5em 1.5em;
 
+    /* Border variable */
     --thickBorder: 3px solid var(--darkBlue);
+
+    /* Shadow variable */
     --shadow: 0px 0px 25px var(--darkBlue);
 }
 
-/* Skrifter
+
+/* Generel things in body
 ..................................................*/
 body {
     font: 12px/18px;
@@ -71,47 +71,18 @@ body {
     background-position: right top;
     background-attachment: fixed;
 
-
-}
-
-html,
-body {
+    /* Make body fill the intire screen height and width */
     height: 100vh;
     margin: 0;
 }
 
-.dataInfo {
-    font-size: 0.8em;
-    line-height: 1.9em;
-}
 
-label,
-h3 {
-    font-size: 1.2em;
-}
 
-::placeholder {
-    font-style: italic;
-}
-.placeholder {
-    font-style: italic; 
-    color: var(--grey);
-    }
-.placeholder::first-line {font-style: italic; color: var(--grey);}
+/* Text
+..................................................*/
 
-select:required:invalid {
-    color: #666;
-    font-style: italic;
-    }
-    option {
-    color: #000;
-    font-style: normal;
-    }
-a {
-    text-decoration: none;
-    color: var(--darkBlue);
-}
-
+/* Text for the sidebar
+...............................*/
 h1 {
     font-style: serif;
     font-size: 1.8em;
@@ -121,20 +92,60 @@ h1 {
     text-align: center;
 }
 
-h2 {
-    /* font-family: serif; */
-    font-size: 1.8em;
+label,
+h3 {
+    font-size: 1.2em;
+}
+
+/* The placeholder in the selection boxes */
+select:required:invalid {
+    color: #666;
+    font-style: italic;
+    cursor: pointer;
+}
+
+/* Placeholder when in the option list */
+.placeholder{font-style: italic;
+    color: var(--grey);}
+
+option {
+    color: var(--darkBlue);
+    font-style: normal;
 }
 
 
+/* Text for the tabs
+...............................*/
+h2 {
+    font-size: 1.8em;
+}
 
-/* Tabeloverskrift */
+a {
+    text-decoration: none;
+    color: var(--darkBlue);
+}
+
+/* Data parametres in use */
+.dataInfo {
+    font-size: 0.8em;
+    line-height: 1.9em;
+}
+
+/* Placeholder in distributor search */
+::placeholder {
+    font-style: italic;
+}
+
+
+/* Text for the table
+...............................*/
+/* Table headline */
 th {
     font-weight: bold;
     vertical-align: bottom;
 }
 
-/* Tabel indhold */
+/* Table body */
 td {
     font-size: 0.8em;
 }
@@ -146,6 +157,8 @@ button {
     text-align: center;
 }
 
+
+
 /* Flex
 ..................................................*/
 .flexContainer {
@@ -154,21 +167,29 @@ button {
     align-items: center;
 }
 
-.margin{margin-bottom: 1em;}
+
+/* General padding & margin
+..................................................*/
+.margin {
+    margin-bottom: .5em;
+}
+
+.padding {
+    padding: 0 2em;
+}
+
+
 
 /* Header
 .........................................................................*/
 
 
+
 /* Main
 .........................................................................*/
-
-
-
 main {
     justify-content: space-around;
     height: 100%;
-    
 }
 
 
@@ -182,32 +203,30 @@ aside {
     box-shadow: var(--shadow);
 }
 
-.padding{padding: var(--pad);}
-
-input[type=text], select {
+/* Input fields */
+input[type=text],
+select {
     width: 100%;
     padding: .5em;
     margin: .2em 0 1.5em;
-    /* border: 2px solid var(--lightBlue); */
-    /* border-radius: 4px; */
     outline: 2px solid var(--lightBlue);
     box-sizing: border-box;
 }
 
-/* input[type=text]:hover, select:hover {
-    outline: 3px solid var(--lightBlue);
-    background-color: var(--lightBlueFaded);
-} */
-option:hover{background-color: var(--lightBlueFaded);}
+.datepicker-here{
+    padding: .5em;
+    margin: .2em 0 1.5em;}
 
-/* select:not(:focus):invalid{color: #C7C7C7;}
-select[disabled], select:disabled{
-    opacity: 0.4;
-    cursor: not-allowed;
-  } */
+.datepicker {
+    max-width: 100%;
+    margin: 0 auto;
+}
 
-/* Content area
+
+
+/* Actual content
 ..................................................*/
+/* The intire div */
 #tabs {
     width: 70%;
     border: var(--thickBorder);
@@ -218,17 +237,11 @@ select[disabled], select:disabled{
 }
 
 
-
 /* Navigation
 ............................*/
-/* #tabs {
-    border: var(--thickBorder);
-} */
-
 nav ul {
     width: 100%;
     list-style: none;
-
     justify-content: space-between;
 }
 
@@ -237,11 +250,7 @@ nav li {
     width: 49.7%;
     text-align: center;
 
-
     background-color: lemonchiffon;
-
-    /* border: var(--thickBorder); */
-    border-bottom: none;
 }
 
 nav li:active,
@@ -258,129 +267,149 @@ nav li a:focus {
     border: none;
 }
 
+/* Different borders on tab headlines */
 #liBilling {
     border-top: var(--thickBorder);
     border-right: var(--thickBorder);
 }
-
 #liStatistics {
     border-top: var(--thickBorder);
     border-left: var(--thickBorder);
 }
 
-#tabs-1,
-#tabs-2 {
-    border: none;
+
+
+/* Different tab content
+............................*/
+article {
+    padding: var(--pad);
 }
 
-
-/* Indholdet
-............................*/
 section {
     width: 100%;
-
 }
 
-.datepicker{max-width: 100%; margin: 0 auto;}
-
+/* Data parametres in use */
 .dataInfo {
     padding-top: 2em;
     padding-bottom: 1em;
     width: 33%;
-
 }
 
-article {
-    padding: var(--pad);
-  }
+
 
 /* Billing
 .....................*/
-/* Tabel billeder
-............................................. */
-.rowAlu{
+
+/* Table icons
+...........*/
+.rowAlu {
     background-image: url('../img/alu2.png');
-    background-position:right ;
-    background-repeat: no-repeat;
-    background-size: 30%;
 }
 
-.rowPet{
+.rowPet {
     background-image: url('../img/bottle1.png');
-    background-position:right ;
-    background-repeat: no-repeat;
-    background-size: 30%;
 }
-.rowHdpe{
+
+.rowHdpe {
     background-image: url('../img/milk.png');
-    background-position:right ;
-    background-repeat: no-repeat;
-    background-size: 30%;
 }
-.rowGlass{
+
+.rowGlass {
     background-image: url('../img/beer.png');
-    background-position:right ;
-    background-repeat: no-repeat;
-    background-size: 30%;
 }
-.rowOtherP{
+
+.rowOtherP {
     background-image: url('../img/ketchup.png');
-    background-position:right ;
-    background-repeat: no-repeat;
-    background-size: 30%;
 }
-.rowOtherM{
+
+.rowOtherM {
     background-image: url('../img/recycle.png');
-    background-position:right ;
-    background-repeat: no-repeat;
-    background-size: 30%;
 }
+
+.rowAlu, .rowPet, .rowHdpe, .rowGlass, .rowOtherP, .rowOtherM { 
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;}
+
 
 /* Tabellen
 ...........*/
 #tableSection {
     height: 60vh;
-    /* overflow-x: scroll; */
-    /* overflow-x: auto; */
     overflow-y: scroll;
-   
 }
-
 
 table {
     font-family: arial, sans-serif;
-    /* border-collapse: collapse; */
     margin: 0 auto;
     width: 100%;
     table-layout: fixed;
-    
-
 }
-/* tr{ display: block;
-    position: relative;
 
-width: 100%;} */
+/* Column width */
+td:nth-child(1),
+th:nth-child(1) {
+    width: 13%;
+}
 
-    td:nth-child(1), th:nth-child(1) { width: 13%;}
-    td:nth-child(2), th:nth-child(2) { width: 13%;}
-    td:nth-child(3), th:nth-child(3) { width: 13%;}
-    td:nth-child(4), th:nth-child(4) { width: 10%;}
-    td:nth-child(5), th:nth-child(5) { width: 10%;}
-    td:nth-child(6), th:nth-child(6) { width: 10%;}
-    td:nth-child(7), th:nth-child(7) { width: 10%;}
-    td:nth-child(8), th:nth-child(8) { width: 15%;}
-    td:nth-child(9), th:nth-child(9) { width: 15%;}
+td:nth-child(2),
+th:nth-child(2) {
+    width: 13%;
+}
 
+td:nth-child(3),
+th:nth-child(3) {
+    width: 13%;
+}
 
-th, td {
+td:nth-child(4),
+th:nth-child(4) {
+    width: 10%;
+}
+
+td:nth-child(5),
+th:nth-child(5) {
+    width: 10%;
+}
+
+td:nth-child(6),
+th:nth-child(6) {
+    width: 10%;
+}
+
+td:nth-child(7),
+th:nth-child(7) {
+    width: 10%;
+}
+
+td:nth-child(8),
+th:nth-child(8) {
+    width: 15%;
+}
+
+td:nth-child(9),
+th:nth-child(9) {
+    width: 15%;
+}
+
+th,
+td {
     border: 1px solid #dddddd;
-    padding: .5em; 
+    padding: .5em;
 }
-td{text-align: right;}
+
+td {
+    text-align: right;
+}
+
 th {
-    text-align: left; 
+    text-align: left;
 }
-td:nth-child(2) {text-align: left;}
+
+td:nth-child(2) {
+    text-align: left;
+}
 
 tr:hover {
     background-color: var(--lightBlueFaded);
@@ -389,18 +418,15 @@ tr:hover {
 #tableHeadlines:hover {
     background-color: transparent;
 }
-#tableBody{text-align: right;}
-.rowDist{text-align: left;}
 
 
-/* Knapper
+/* Buttons
 ...........*/
 .btn {
     border: none;
     border-radius: 5px;
-    background-color:var(--green); 
+    background-color: var(--green);
     padding: .7em .5em;
-    /* margin: .5em; */
     cursor: pointer;
     display: inline-block;
     width: 100%;
@@ -411,10 +437,12 @@ tr:hover {
     background: var(--grey);
 }
 
+
+
 /* Statistics
 .....................*/
 
-/* Grafen
+/* Chart (external css)
 ...........*/
 .chart rect {
     fill: var(--lightBlueFaded);
@@ -441,14 +469,3 @@ tr:hover {
     stroke: var(--darkBlue);
     shape-rendering: crispEdges;
 }
-
-
-
-/* Footer
-.........................................................................*/
-
-
-
-
-/* @media query! Skærme over XXXpx
-..................................................................*/

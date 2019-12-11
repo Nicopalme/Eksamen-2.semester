@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Site language -->
 <html lang="en">
 
 
@@ -15,165 +16,214 @@ REGELER FOR HTML:
 -->
 
 <head>
-    <!-- Links som måske skal bruges FJERN-->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
-    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
 
+    <!-- General meta 
+..................................................................... -->
 
-    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css"> -->
-
-
-
+    <!-- Set caracters for the side (Alphabet, numbers ect.) -->
     <meta charset="utf-8" />
+
+    <!-- Internet Explorer fallback (external source) -->
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+
+    <!-- Document title -->
     <title>Data visualization | Anker Andersen A/S</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> FJERN--> 
+
+    <!-- Anti SEO - no crawling by robots -->
     <meta name="robots" content="noindex, nofollow">
 
 
-    <!-- Reset CSS -->
+    <!-- Read stylesheets
+..................................................................... -->
+
+    <!-- Meyers CSS reset (external source) -->
     <link href="css/reset.css" rel="stylesheet">
 
-    <!-- CSS til tabs -->
-    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css"> -->
-
-    <!-- CSS til kalender -->
+    <!-- CSS for the datepicker (external source) -->
     <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
+
     <!-- Our stylesheet -->
     <link href="css/style.css" rel="stylesheet">
- 
 
-    <!-- Script til tabs -->
+
+    <!-- Read scripts
+..................................................................... -->
+
+    <!-- Script for using general jQuery (external source) -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <!-- Script for UI jQuery (for user interface) (external source) -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Script for tabs -->
     <script>
         $(function () {
             $("#tabs").tabs();
         });
     </script>
-    <!-- Script til datapicker -->
+
+    <!-- Script for datepicker (external source) -->
     <script src="js/datepicker.min.js"></script>
-    <!-- Include English language -->
+    <!-- Include English language (external source) -->
     <script src="js/datepicker.en.js"></script>
-    <!-- Script til diagram -->
-    <script src="js/diagram.js"></script>
+
+    <!-- Script for chart (external source) -->
+    <script src="js/chart.js"></script>
+
     <!-- Our script -->
     <script src="js/script.js"></script>
-
-
 
 </head>
 
 
+<!-- All content
+..................................................................... -->
 
 <body>
-    <!-- Alt indhold i headeren
-............................................................. 
--->
-    <header>
 
+    <!-- All header content
+    ...................................... -->
+    <header>
     </header>
 
-
-    <!-- Det unikke indhold på siden
-............................................................. 
--->
+    <!-- Unique content for the site
+    ...................................... -->
     <main class="flexContainer">
 
-        <!-- Sidebar med inputfelter-->
+        <!-- Sidebar with input fields
+        ...................................... -->
         <aside class="fullHeight">
 
-            <!-- Input for "location" -->
-            <form>
-                <h1 class="margin">Company name</h1>
-                <!-- Label/skilt -->
-                <h3><img src="img/location.png"> Location:</h3>
-                <!-- Indstillinger for input -->
-                            <!-- Hvilken type indputfelt -->
-                <select id="locations" required>
-                    <!-- Diverse muligheder -->
+            <!-- Name of the company -->
+            <h1 class="margin">Company name</h1>
+
+            <!-- Input for the selectbox "location" -->
+            <form class="padding">
+
+                <!-- Label with icon -->
+                <h3 class="margin"><img src="img/location.png"> Location:</h3>
+
+                <!-- Type of input field with a function that changes the location value in the tab windows  -->
+                <select id="locations" required onchange="curLocation()">
+
+                    <!-- Different options -->
                     <option value="" selected class="placeholder">Choose Location</option>
                     <option value="">ALL location</option>
+                    <!-- The rest of the values will be loaded from our script -->
+
                 </select>
             </form>
 
-            <!-- Input for "machine" -->
+            <!-- Input for the selectbox "machine" -->
             <form class="padding">
-                <!-- Label/skilt -->
+
+                <!-- Label with icon -->
                 <h3 class="margin"><img src="img/tandhjul-1.png">Machine:</h3>
-                <!-- Indstillinger for input -->
-                           <!-- Hvilken type indputfelt -->
+
+                <!-- Type of input field with a function that changes the machine value in the tab windows  -->
                 <select id="machine" required onchange="curMachine()">
-                    <!-- Diverse muligheder -->
+
+                    <!-- Different options -->
                     <option value="" selected class="placeholder">Choose Machine</option>
                     <option value="">ALL macines</option>
-                                       </select>
+                    <!-- The rest of the values will be loaded from our script -->
+
+                </select>
             </form>
 
-            <!-- Input for "date and time" -->
-            <h3><img src="img/kalender.png">Dates</h3>
 
-            <!-- From and to dates -->
-            <div class="datepicker-here padding" data-language="en" data-multiple-dates="true"></div>
+            <!-- Label with icon for Dates -->
+            <h3 class="padding margin"><img src="img/kalender.png">Dates</h3>
 
-            <!-- Input for "batch" -->
+            <!-- A div to place the datepicker in -->
+            <div class="datepicker-here padding margin" data-language="en" data-multiple-dates="true"></div>
+
+
+            <!-- Input for the selectionbox "batch" -->
             <form class="padding">
-                <!-- Label/skilt -->
+
+                <!-- Label with icon -->
                 <h3 class="margin"><img src="img/batch.png">Batch:</h3>
-                <!-- Indstillinger for input -->
-                <!-- <input type="text" name="team" id="batchForm" list="batch" placeholder="Choose batch"> -->
-                <!-- Hvilken type indputfelt -->
-                <select id="batch" required>
-                    <!-- Diverse muligheder -->
+
+                <!-- Type of input field with a function that changes the batch value in the tab windows  -->
+                <select id="batch" required onchange="curBatch()">
+
+                    <!-- Different options -->
                     <option value="" selected class="placeholder">Choose Batch</option>
                     <option value=""> ALL batches</option>
+                    <!-- The rest of the values will be loaded from our script -->
+
                 </select>
             </form>
 
 
         </aside>
 
-        <!-- Sidens faktiske indhold -->
+
+
+        <!-- The actual content of the site
+        ...................................... -->
         <div id="tabs" class="fullHeight">
-            <!-- Navigationen mellem de to faner -->
+
+            <!-- Navigation between the two tabs -->
             <nav>
                 <ul class="flexContainer">
+
+                    <!-- The headline for the billing tab -->
                     <li id="liBilling" onclick="billingFunction()">
+
+                        <!-- Link to the content for the billing tab -->
                         <a href="#tabs-1">
                             <h2>Billing<img src="img/printer.png" style="padding-left:2em;"></h2>
                         </a>
                     </li>
+
+
+                    <!-- The headline for the statistics tab -->
                     <li id="liStatistics" onclick="statisticsFunction()">
+
+                        <!-- Link to the content for the statistics tab -->
                         <a href="#tabs-2">
-                            <h2>Statistics<img src="img/soejlediagram.png" style="padding-left:2em;"></h2>
+                            <h2>Statistics</h2>
+                            <!-- <img src="img/soejlechart.png" style="padding-left:2em;"> -->
                         </a>
                     </li>
                 </ul>
             </nav>
 
-            <!-- article med information de anvendte parametre -->
+
+
+            <!-- The content for the billing tab -->
             <article id="tabs-1" class="flexContainer">
+
+                <!-- Sections whith info for the data parametres in use -->
                 <section class="dataInfo">
-                    <p id="curLocation">Location:</p>
-                    <p id="curMachine">Machine:</p>
-                    <p>Batch:</p>
+                    <p id="curLocationB">Location:</p>
+                    <p id="curMachineB">Machine:</p>
+                    <p id="curBatchB">Batch:</p>
                 </section>
                 <section class="dataInfo">
                     <p>Date:</p>
                     <p>Time:</p>
                 </section>
-                <section class="dataInfo"> <input type="text" id="myInput" onkeyup="sortTable()"
-                        placeholder="Search for distributors.." title="Type in a name" autocomplete="off"></section>
 
+                <!-- The distributor search box -->
+                <section class="dataInfo">
+                    <input type="text" id="myInput" onkeyup="sortTable()" placeholder="Search for distributors.."
+                        title="Type in a name" autocomplete="off">
+                </section>
+
+                <!-- Section with the table -->
                 <section id="tableSection">
 
+                    <!-- The table -->
                     <table id="AATable">
-                        <thead>
 
+                        <!-- The table headlines -->
+                        <thead>
                             <tr id="tableHeadlines">
+
+                                <!-- The individiual headlines where the first one contains a button -->
                                 <th class="rowButton"><button type="button" class="btn">Export all remaining
                                         invoices <img src="img/exportblaa.png" style="padding-left:2em;"></button></th>
                                 <th class="rowDist"> Distributor</th>
@@ -186,49 +236,56 @@ REGELER FOR HTML:
                                 <th class="rowOtherM">Other material</th>
                             </tr>
                         </thead>
-                        <tbody id="tableBody">
 
+                        <!-- The table body content -->
+                        <tbody id="tableBody">
+                            <!-- This will be loaded from our script -->
                         </tbody>
 
                     </table>
-
+                    
                 </section>
             </article>
 
-            <!-- article med det indhold som er tilpasset fanerne -->
+
+
+            <!-- The content for the statistics tab -->
             <article id="tabs-2" class="flexContainer">
+
+                <!-- Section whith info for the data parametres in use -->
                 <section class="dataInfo">
-                    <p>Location:</p>
-                    <p>Machine:</p>
-                    <p>Batch:</p>
+                    <p id="curLocationS">Location:</p>
+                    <p id="curMachineS">Machine:</p>
+                    <p id="curBatchS">Batch:</p>
                 </section>
                 <section class="dataInfo">
                     <p>Date:</p>
                     <p>Time:</p>
                 </section>
+
+                <!-- Section with the chart -->
                 <section>
-
+                    <!-- A svg tag for the script to put the chart in -->
                     <svg class="chart"></svg>
+
+                    <!-- Script for the chart (external source) -->
                     <script src="https://d3js.org/d3.v3.min.js"></script>
-                    <script src="js/diagram.js"></script>
+                    <!-- Scrip for the chart (external source) -->
+                    <script src="js/chart.js"></script>
                 </section>
-
-
 
             </article>
 
+        <!-- Close the tab-content div -->
         </div>
-
     </main>
 
 
 
 
-    <!-- Alt indhold i footeren
-............................................................. 
--->
-    <footer FJERN?>
-
+    <!-- All footer content
+    ...................................... -->
+    <footer>
     </footer>
 
 </body>

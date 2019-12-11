@@ -1,10 +1,4 @@
 // JS filen!! Samme regeler som CSS!
-
-//  loadingbar
-$(window).load(function () {
-  $('.preloader').fadeOut('slow');
-});
-
 window.onload = function () {
   billingFunction();
 
@@ -36,12 +30,9 @@ let pricat = [
 // let reader = new FileReader();
 // pricat.readAsText(newFile);
 
-
-sortPricat(pricat[0]);
-
-function sortPricat(pricatLine) {
-  let result = pricatLine.split(";");
-  return result;
+function sortPricat(pricatLine){
+ let result = pricatLine.split(";");
+ return result;
 };
 
 

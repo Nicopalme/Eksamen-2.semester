@@ -15,7 +15,7 @@ REGELER FOR HTML:
 -->
 
 <head>
-    <!-- Links som måske skal bruges -->
+    <!-- Links som måske skal bruges FJERN-->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
@@ -29,10 +29,9 @@ REGELER FOR HTML:
     <meta charset="utf-8" />
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
     <title>Data visualization | Anker Andersen A/S</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> FJERN--> 
     <meta name="robots" content="noindex, nofollow">
-    <!-- <meta name="keywords" content="XXX" FJERN?/> -->
-    <!-- <meta name="description" content="XXX" FJERN/> -->
+
 
     <!-- Reset CSS -->
     <link href="css/reset.css" rel="stylesheet">
@@ -43,13 +42,9 @@ REGELER FOR HTML:
 
     <!-- CSS til kalender -->
     <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
-
     <!-- Our stylesheet -->
-
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
-
-
+ 
 
     <!-- Script til tabs -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -59,16 +54,13 @@ REGELER FOR HTML:
             $("#tabs").tabs();
         });
     </script>
-
-
     <!-- Script til datapicker -->
     <script src="js/datepicker.min.js"></script>
-
     <!-- Include English language -->
     <script src="js/datepicker.en.js"></script>
-
-    <!-- Our script -->
+    <!-- Script til diagram -->
     <script src="js/diagram.js"></script>
+    <!-- Our script -->
     <script src="js/script.js"></script>
 
 
@@ -78,11 +70,9 @@ REGELER FOR HTML:
 
 
 <body>
-
     <!-- Alt indhold i headeren
 ............................................................. 
 -->
-<div class="preloader"></div>
     <header>
 
     </header>
@@ -132,7 +122,6 @@ REGELER FOR HTML:
             <h3>Dates</h3>
 
             <!-- From and to dates -->
-            <!-- <p>From: <input type="text" id="fromDate"> To: <input type="text" id="toDate"></p> -->
             <div class="datepicker-here" data-language="en" data-multiple-dates="true"></div>
 
             <!-- Input for "batch" -->
@@ -187,10 +176,11 @@ REGELER FOR HTML:
                 <section id="tableSection">
 
                     <table id="AATable">
-                      <thead>
-                                
+                        <thead>
+
                             <tr id="tableHeadlines">
-                                <th class="rowButton"><button type="button" class="btn">Export all remaining invoices</button></th>
+                                <th class="rowButton"><button type="button" class="btn">Export all remaining
+                                        invoices</button></th>
                                 <th class="rowDist">Distributor</th>
                                 <th class="rowTotal">Total</th>
                                 <th class="rowAlu">ALU</th>
@@ -242,7 +232,7 @@ REGELER FOR HTML:
     <!-- Alt indhold i footeren
 ............................................................. 
 -->
-    <footer>
+    <footer FJERN?>
 
     </footer>
 

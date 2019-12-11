@@ -48,7 +48,7 @@ summary {
     --white: rgba(255, 255, 255, .95);
     --lightlightblue: #eef1f6;
     /* --green: rgba(111, 211, 38, .8); */
-    --green: #1e7a29;
+    --green: #90CE67;
 
     --pad: 2% 3%;
     --padtb: 4% 0 2%;
@@ -148,7 +148,8 @@ button {
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
+
 }
 
 /* .fullHeight {
@@ -157,13 +158,6 @@ button {
 
 /* Header
 .........................................................................*/
-header,
-footer {
-    height: 1.5em;
-
-}
-
-
 
 
 /* Main
@@ -173,27 +167,9 @@ footer {
 
 main {
     justify-content: space-around;
-    height: 90vh;
-    margin-top: 7em;
-}
-
-
-
-/* Loadingbar................................................................ */
-.preloader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
-    z-index: 9999;
-    background-image: url('../images/default.gif');
-    background-repeat: no-repeat;
-    background-color: #FFF;
-    background-position: center;
+    
 }
-
-
 
 
 /* Sidebar
@@ -201,7 +177,7 @@ main {
 aside {
     width: 18%;
     background-color: var(--white);
-    height: 90vh;
+    height: 75%;
     padding: var(--pad);
     border: var(--thickBorder);
     box-shadow: var(--shadow);
@@ -240,7 +216,7 @@ select[disabled], select:disabled{
     border-top: none;
     box-shadow: var(--shadow);
     background-color: var(--white);
-    height: 90vh;
+    height: 84%;
 }
 
 

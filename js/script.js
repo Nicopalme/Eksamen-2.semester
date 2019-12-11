@@ -161,7 +161,7 @@ $(document).ready(newOptionLocation);
 function curMachine() {
 
   var x = document.getElementById("machine").value;
-  document.getElementById("curMachine").innerHTML = 'Machine: ' + '<bold>' + x + '</bold>'; 
+  document.getElementById("curMachine").innerHTML = 'Machine: ' + '<strong>' + x + '</strong>'; 
 };
 
 

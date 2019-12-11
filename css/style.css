@@ -94,7 +94,10 @@ h3 {
 ::placeholder {
     font-style: italic;
 }
-.placeholder {font-style: italic; color: var(--grey);}
+.placeholder {
+    font-style: italic; 
+    color: var(--grey);
+    }
 .placeholder::first-line {font-style: italic; color: var(--grey);}
 
 select:required:invalid {
@@ -125,6 +128,7 @@ h2 {
 }
 
 
+
 /* Tabeloverskrift */
 th {
     font-weight: bold;
@@ -152,9 +156,7 @@ button {
 
 }
 
-/* .fullHeight {
-    height: 80%;
-} */
+.margin{margin-bottom: 1em;}
 
 /* Header
 .........................................................................*/
@@ -302,6 +304,45 @@ article {
 
 /* Billing
 .....................*/
+/* Tabel billeder
+............................................. */
+.rowAlu{
+    background-image: url('../img/alu2.png');
+    background-position:right ;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+
+.rowPet{
+    background-image: url('../img/bottle1.png');
+    background-position:right ;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+.rowHdpe{
+    background-image: url('../img/milk.png');
+    background-position:right ;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+.rowGlass{
+    background-image: url('../img/beer.png');
+    background-position:right ;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+.rowOtherP{
+    background-image: url('../img/ketchup.png');
+    background-position:right ;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+.rowOtherM{
+    background-image: url('../img/recycle.png');
+    background-position:right ;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
 
 /* Tabellen
 ...........*/
@@ -320,6 +361,7 @@ table {
     margin: 0 auto;
     width: 100%;
     table-layout: fixed;
+    
 
 }
 /* tr{ display: block;
@@ -327,23 +369,26 @@ table {
 
 width: 100%;} */
 
-    td:nth-child(1), th:nth-child(1) { width: 15%; }
-    td:nth-child(2), th:nth-child(2) { width: 15%; }
-    td:nth-child(3), th:nth-child(3) { width: 15%; }
-    td:nth-child(4), th:nth-child(4) { width: 10%; }
-    td:nth-child(5), th:nth-child(5) { width: 10%; }
-    td:nth-child(6), th:nth-child(6) { width: 10%; }
-    td:nth-child(7), th:nth-child(7) { width: 10%; }
-    td:nth-child(8), th:nth-child(8) { width: 10%; }
-    td:nth-child(9), th:nth-child(9) { width: 15%; }
+    td:nth-child(1), th:nth-child(1) { width: 13%;}
+    td:nth-child(2), th:nth-child(2) { width: 13%;}
+    td:nth-child(3), th:nth-child(3) { width: 13%;}
+    td:nth-child(4), th:nth-child(4) { width: 10%;}
+    td:nth-child(5), th:nth-child(5) { width: 10%;}
+    td:nth-child(6), th:nth-child(6) { width: 10%;}
+    td:nth-child(7), th:nth-child(7) { width: 10%;}
+    td:nth-child(8), th:nth-child(8) { width: 15%;}
+    td:nth-child(9), th:nth-child(9) { width: 15%;}
 
 
 th, td {
     border: 1px solid #dddddd;
-    text-align: left;
-    padding: .5em;
-  
+    padding: .5em; 
 }
+td{text-align: right;}
+th {
+    text-align: left; 
+}
+td:nth-child(2) {text-align: left;}
 
 tr:hover {
     background-color: var(--lightBlueFaded);
@@ -352,6 +397,8 @@ tr:hover {
 #tableHeadlines:hover {
     background-color: transparent;
 }
+#tableBody{text-align: right;}
+.rowDist{text-align: left;}
 
 
 /* Knapper
@@ -359,8 +406,8 @@ tr:hover {
 .btn {
     border: none;
     border-radius: 5px;
-    background-color: var(--green);
-    padding: .5em .5em;
+    background-color:var(--green); 
+    padding: .7em .5em;
     /* margin: .5em; */
     cursor: pointer;
     display: inline-block;
@@ -369,7 +416,7 @@ tr:hover {
 
 /* On mouse-over */
 .btn:hover {
-    background: var(--green);
+    background: var(--grey);
 }
 
 /* Statistics

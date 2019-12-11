@@ -86,9 +86,9 @@ REGELER FOR HTML:
 
             <!-- Input for "location" -->
             <form>
-                <h1>Company name</h1>
+                <h1 class="margin">Company name</h1>
                 <!-- Label/skilt -->
-                <label for="location">Location:</label>
+                <h3><img src="img/location.png"> Location:</h3>
                 <!-- Indstillinger for input -->
                 <!-- <input type="text" name="location" id="locationForm" list="locations" placeholder="Choose location"> -->
                 <!-- Hvilken type indputfelt -->
@@ -101,7 +101,7 @@ REGELER FOR HTML:
             <!-- Input for "machine" -->
             <form>
                 <!-- Label/skilt -->
-                <label for="machine">Machine:</label>
+                <h3 class="margin"><img src="img/tandhjul-1.png">Machine:</h3>
                 <!-- Indstillinger for input -->
                 <!-- <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine" onclick="myFunction()"> -->
                 <!-- Hvilken type indputfelt -->
@@ -117,7 +117,7 @@ REGELER FOR HTML:
             </form>
 
             <!-- Input for "date and time" -->
-            <h3>Dates</h3>
+            <h3><img src="img/kalender.png">Dates</h3>
 
             <!-- From and to dates -->
             <div class="datepicker-here" data-language="en" data-multiple-dates="true"></div>
@@ -125,7 +125,7 @@ REGELER FOR HTML:
             <!-- Input for "batch" -->
             <form>
                 <!-- Label/skilt -->
-                <label for="batch">Batch:</label>
+                <h3 class="margin"><img src="img/batch.png">Batch:</h3>
                 <!-- Indstillinger for input -->
                 <!-- <input type="text" name="team" id="batchForm" list="batch" placeholder="Choose batch"> -->
                 <!-- Hvilken type indputfelt -->
@@ -146,12 +146,12 @@ REGELER FOR HTML:
                 <ul class="flexContainer">
                     <li id="liBilling" onclick="billingFunction()">
                         <a href="#tabs-1">
-                            <h2>Billing</h2>
+                            <h2>Billing<img src="img/printer.png" style="padding-left:2em;"></h2>
                         </a>
                     </li>
                     <li id="liStatistics" onclick="statisticsFunction()">
                         <a href="#tabs-2">
-                            <h2>Statistics</h2>
+                            <h2>Statistics<img src="img/soejlediagram.png" style="padding-left:2em;"></h2>
                         </a>
                     </li>
                 </ul>
@@ -178,10 +178,10 @@ REGELER FOR HTML:
 
                             <tr id="tableHeadlines">
                                 <th class="rowButton"><button type="button" class="btn">Export all remaining
-                                        invoices</button></th>
-                                <th class="rowDist">Distributor</th>
+                                        invoices <img src="img/exportblaa.png" style="padding-left:2em;"></button></th>
+                                <th class="rowDist"> Distributor</th>
                                 <th class="rowTotal">Total</th>
-                                <th class="rowAlu">ALU</th>
+                                <th class="rowAlu"> ALU</th>
                                 <th class="rowPet">PET</th>
                                 <th class="rowHdpe">HDPE</th>
                                 <th class="rowGlass">Glass</th>

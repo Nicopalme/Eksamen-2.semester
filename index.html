@@ -92,11 +92,11 @@ REGELER FOR HTML:
                 <!-- Label/skilt -->
                 <label for="location">Location:</label>
                 <!-- Indstillinger for input -->
-                <!-- <input type="text" name="location" id="locationForm" list="locations" placeholder="Choose location"> -->
-                <!-- Hvilken type indputfelt -->
+                            <!-- Hvilken type indputfelt -->
                 <select id="locations" required>
                     <!-- Diverse muligheder -->
                     <option value="" selected class="placeholder">Choose Location</option>
+                    <option value="">ALL location</option>
                 </select>
             </form>
 
@@ -105,17 +105,12 @@ REGELER FOR HTML:
                 <!-- Label/skilt -->
                 <label for="machine">Machine:</label>
                 <!-- Indstillinger for input -->
-                <!-- <input type="text" name="team" id="machineForm" list="machine" placeholder="Choose machine" onclick="myFunction()"> -->
-                <!-- Hvilken type indputfelt -->
+                           <!-- Hvilken type indputfelt -->
                 <select id="machine" required onchange="curMachine()">
                     <!-- Diverse muligheder -->
                     <option value="" selected class="placeholder">Choose Machine</option>
-                    <!-- <option>HLZ151257</option>
-                    <option>HLZ151258</option>
-                    <option>HLZ151259</option>
-                    <option>HLZ151260</option> -->
-                    <!-- etc... -->
-                    </select>
+                    <option value="">ALL macines</option>
+                                       </select>
             </form>
 
             <!-- Input for "date and time" -->
@@ -134,7 +129,7 @@ REGELER FOR HTML:
                 <select id="batch" required>
                     <!-- Diverse muligheder -->
                     <option value="" selected class="placeholder">Choose Batch</option>
-                    <!-- etc... -->
+                    <option value=""> ALL batches</option>
                 </select>
             </form>
 

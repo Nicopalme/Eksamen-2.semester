@@ -277,6 +277,9 @@ nav li a:focus {
     border-left: var(--thickBorder);
 }
 
+nav ul li img {overflow: hidden;
+width: .8em;
+padding-right: 0.2em;}
 
 
 /* Different tab content

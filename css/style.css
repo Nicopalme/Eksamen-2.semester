@@ -459,8 +459,25 @@ tr:hover {
 /* Statistics
 .....................*/
 
+#iconStatistics {
+    width: 35px;
+    height: 363px;
+    margin-left: 10%;
+}
+
+#iconStatistics .iconBox {
+    height: 60px;
+}
+
+#iconStatistics img {
+    width: 100%;
+}
+
 /* Chart (external css)
 ...........*/
+#chart {
+    width: 70%;
+}
 .chart rect {
     fill: var(--lightBlueFaded);
 }

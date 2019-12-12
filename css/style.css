@@ -53,6 +53,7 @@ summary {
 
     /* Shadow variable */
     --shadow: 0px 0px 25px var(--darkBlue);
+    --lightShadow: 0px 0px 3px var(--lightBlue);
 }
 
 
@@ -155,7 +156,7 @@ td {
 button {
     font-size: .8em;
     color: var(--darkBlue);
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
 }
 
@@ -168,6 +169,10 @@ button {
     flex-wrap: wrap;
 }
 
+/* .spaceBetween {
+    justify-content: space-between;
+} */
+
 .alignItemsCenter {
     align-items: center;
 }
@@ -176,6 +181,7 @@ button {
     align-items: flex-start;
 }
 
+.flexEnd{justify-content: flex-end;}
 
 /* General padding & margin
 ..................................................*/
@@ -232,17 +238,9 @@ select {
     margin: 0 auto;
 }
 
-/* select option:hover,
-    select option:focus,
-    select option:active {
-        background: linear-gradient(#000000, #000000);
-        background-color: #000000 !important; /* for IE */
-/* color: #ffed00 !important;
-    } */
 
 select option:checked {
-    background: linear-gradient(#d6d6d6, #d6d6d6);
-    background-color: #d6d6d6 !important;
+    background-color: var(--lightBlueFaded) !important;
     /* for IE */
     color: #000000 !important;
 }
@@ -275,7 +273,7 @@ nav ul {
 
 nav li {
     float: left;
-    width: 49.7%;
+    width: 49.5%;
     text-align: center;
 
     background-color: lemonchiffon;
@@ -327,10 +325,23 @@ section {
 .dataInfo {
     padding-top: 2em;
     padding-bottom: 1em;
-    width: 33%;
+    width: 50%;
 }
 
+.dataInfosection {
+    width: 40%;
+}
 
+#distInput {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    width: 40%;
+    float: right;
+}
+
+strong {
+    font-weight: bold;
+}
 
 /* Billing
 .....................*/
@@ -470,12 +481,22 @@ tr:hover {
     cursor: pointer;
     display: inline-block;
     width: 100%;
+    box-shadow: var(--lightShadow);
 }
 
 /* On mouse-over */
 .btn:hover {
+    /* background: var(--lightBlue); */
+    /* color: #fff; */
+    outline: 1px solid var(--lightBlue);
+}
+
+.buttonClicked {
     background: var(--grey);
 }
+
+.btn:visited {background: var(--grey);}
+.btn:focus {background: var(--grey);}
 
 
 
@@ -519,12 +540,14 @@ tr:hover {
     text-anchor: end;
 }
 
-.bar:hover {
+/* .bar:hover {
     fill: var(--lightBlue);
-}
+} */
 
 .axis path {
     fill: none;
     stroke: var(--darkBlue);
     shape-rendering: crispEdges;
 }
+
+#exportStatistics{width: 13%; margin: 2em 2em 0 0;}

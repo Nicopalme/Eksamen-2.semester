@@ -194,21 +194,23 @@ REGELER FOR HTML:
 
 
             <!-- The content for the billing tab -->
-            <article id="tabs-1" class="flexContainer alignItemsStart">
+            <article id="tabs-1" class="flexContainer spaceBetween">
 
-                <!-- Sections whith info for the data parametres in use -->
-                <section class="dataInfo">
-                    <p id="curLocationB">Location:</p>
-                    <p id="curMachineB">Machine:</p>
-                    <p id="curBatchB">Batch:</p>
-                </section>
-                <section class="dataInfo">
-                    <p>Date:</p>
-                    <p>Time:</p>
+                <section class="flexContainer alignItemsStart dataInfosection">
+                    <!-- Sections whith info for the data parametres in use -->
+                    <div class="dataInfo">
+                        <p id="curLocationB">Location:</p>
+                        <p id="curMachineB">Machine:</p>
+                        <p id="curBatchB">Batch:</p>
+                    </div>
+                    <div class="dataInfo">
+                        <p>Date:</p>
+                        <p>Time:</p>
+                    </div>
                 </section>
 
                 <!-- The distributor search box -->
-                <section class="dataInfo">
+                <section id="distInput">
                     <input type="text" id="myInput" onkeyup="sortTable()" placeholder="Search for distributors.."
                         title="Type in a name" autocomplete="off">
                 </section>
@@ -252,7 +254,7 @@ REGELER FOR HTML:
             <!-- The content for the statistics tab -->
             <article id="tabs-2">
 
-                <section class="flexContainer alignItemsStart">
+                <section class="flexContainer alignItemsStart dataInfosection">
                     <!-- Section whith info for the data parametres in use -->
                     <div class="dataInfo">
                         <p id="curLocationS">Location:</p>
@@ -299,6 +301,10 @@ REGELER FOR HTML:
                         <!-- Scrip for the chart (external source) -->
                         <script src="js/chart.js"></script>
                     </div>
+                </section>
+
+                <section class="flexContainer flexEnd">
+                    <button id="exportStatistics" class="btn">Export statistics</button>
                 </section>
 
             </article>

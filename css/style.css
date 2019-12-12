@@ -165,9 +165,9 @@ button {
     flex-wrap: wrap;
 }
 
-/* .spaceBetween {
+.spaceBetween {
     justify-content: space-between;
-} */
+}
 
 .alignItemsCenter {
     align-items: center;

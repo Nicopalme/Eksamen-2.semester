@@ -1,10 +1,12 @@
-// JS filen!! Samme regeler som CSS!
-window.onload = function () {
-  billingFunction();
+// Run function when DOM is loaded
+//......................................................................................
+$(document).ready(billingFunction);
+$(document).ready(newTable);
+$(document).ready(newOptionMachine);
+$(document).ready(newOptionLocation);
+$(document).ready(newOptionBatch);
 
-}
-
-// Tabelfunktionen
+// Expected data from file
 //......................................................................................
 let pricat = [
   "CocaCola;738;157;315;132;245;13;0",
@@ -24,23 +26,25 @@ let pricat = [
 ];
 
 
-
-
 // let newFile = new File('../totalPricat.txt');
 // let reader = new FileReader();
 // pricat.readAsText(newFile);
 
+// Sort and split the pricat
 function sortPricat(pricatLine){
  let result = pricatLine.split(";");
  return result;
 };
 
-
+// Table function
+//.............................................................
 function newTable() {
 
   let table = document.getElementById("tableBody");
 
+  // Run thrugh pricat and insert row and cells in the table for each data string
   for (let i = 0; i < pricat.length; i++) {
+
     let row = table.insertRow(i);
 
     let cell1 = row.insertCell(0);
@@ -53,9 +57,9 @@ function newTable() {
     let cell8 = row.insertCell(7);
     let cell9 = row.insertCell(8);
 
-
     let result = sortPricat(pricat[i]);
 
+    // Insert data to the cells from pricat
     cell1.innerHTML = '<button type="button" class="btn">Export invoice <img src="img/exportblaa.png" style="padding-left:1em;"></button>';
     cell2.innerHTML = result[0];
     cell3.innerHTML = result[1];
@@ -67,12 +71,11 @@ function newTable() {
     cell9.innerHTML = result[7];
   }
 };
-$(document).ready(newTable);
-
 
 
 
 // MNJ TEST
+//......................................................................................
 let pricatMNJ = [
   //Location[0];Machine[1];Batch[2];Distributor[3];Material[4];Color[5]
   "Buffalo;HLZ151256;2019112119351753;CocaCola;1;15",
@@ -91,39 +94,41 @@ let pricatMNJ = [
   "Buffalo;HLZ151256;2019112119351754;Sol;1;15"
 ];
 
-// Gennemlæs og split pricatten
-// ..........................................................
-
-sortPricatMNJ(pricatMNJ[0]);
-
+// Sort and split the pricat
 function sortPricatMNJ(pricatMNJLine) {
   let resultMNJ = pricatMNJLine.split(";");
   return resultMNJ;
 };
 
 
-// Options hentet fra pricat til machine input feltet
-// ..........................................................
+// Option values from pricat to machine input field
+//.............................................................
 function newOptionMachine() {
 
+  // Run thrugh pricat
   for (let i = 0; i < pricatMNJ.length; i++) {
     let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
     var x = document.getElementById("machine");
     var option = document.createElement("option");
-    var newArray = [resultMNJ[1]];
-// getUnique();
 
+    // Create a new array with the maschine values from the pricat
+    var newArray = [resultMNJ[1]];
+
+    // getUnique();
+
+    // Insert the values from the new array to an option
     option.text = newArray;
 
+    // Create option
     x.add(option);
 
   }
  
 };
-$(document).ready(newOptionMachine);
 
-// Sorter gengangere fra (HJÆLP)
-// https://www.tutorialrepublic.com/faq/how-to-remove-duplicate-values-from-a-javascript-array.php
+
+// Sort out dublicates (HELP)
+// https://www.tutorialrepublic.com/faq/how-to-remove-duplicate-values-from-a-javascript-array.php (HELP)
 // ..............................
 function getUnique(newArray){
 for (i = 0; i < newArray.length; i++) {
@@ -135,8 +140,8 @@ return uniqueArray;
 }
 
 
-// Options hentet fra pricat til location input feltet
-// ..........................................................
+// Option values from pricat to location input field
+//.............................................................
 function newOptionLocation() {
 
   for (let i = 0; i < pricatMNJ.length; i++) {
@@ -153,21 +158,9 @@ function newOptionLocation() {
   }
  
 };
-$(document).ready(newOptionLocation);
 
-
-// Tekst hentet fra inputfelterne
-// ..........................................................
-function curMachine() {
-
-  var x = document.getElementById("machine").value;
-  document.getElementById("curMachine").innerHTML = 'Machine: ' + '<strong>' + x + '</strong>'; 
-};
-
-
-
-// Options hentet fra pricat til batch input feltet
-// ..........................................................
+// Option values from pricat to batch input field
+//.............................................................
 function newOptionBatch() {
 
   for (let i = 0; i < pricatMNJ.length; i++) {
@@ -184,11 +177,38 @@ function newOptionBatch() {
   }
  
 };
-$(document).ready(newOptionBatch);
 
 
-// Sorter tabellen efter søgning
-//...................................................................
+// Text from input fields to current .dataInfo
+//.............................................................
+function curLocation() {
+
+  var x = document.getElementById("locations").value;
+  document.getElementById("curLocationB").innerHTML = 'Location: ' + x ; 
+  document.getElementById("curLocationS").innerHTML = 'Location: ' + x ; 
+};
+
+function curMachine() {
+
+  var x = document.getElementById("machine").value;
+  document.getElementById("curMachineB").innerHTML = 'Machine: ' + x ; 
+  document.getElementById("curMachineS").innerHTML = 'Machine: ' + x ; 
+};
+
+function curBatch() {
+
+  var x = document.getElementById("batch").value;
+  document.getElementById("curBatchB").innerHTML = 'Batch: ' + x ; 
+  document.getElementById("curBatchS").innerHTML = 'Batch: ' + x ; 
+};
+
+
+
+
+
+
+// Sort table on search (external script)
+//.............................................................
 function sortTable() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
@@ -208,26 +228,20 @@ function sortTable() {
   }
 }
 
-// Tabfunktioner
+// Tab functions
 //...................................................................................
 function billingFunction() {
   let liStat = document.getElementById("liStatistics");
   let liBill = document.getElementById("liBilling");
-  // liStat.style.borderBottom = "solid 1px var(--darkBlue)";
-  // liBill.style.border = "none";
   liStat.style.backgroundColor = "var(--grey)";
   liBill.style.backgroundColor = "transparent";
   liBill.style.fontWeight = "bold";
   liStat.style.fontWeight = "normal";
 }
 
-
-// // Det der sker, når man trykker på "Statistics"
 function statisticsFunction() {
   let liStat = document.getElementById("liStatistics");
   let liBill = document.getElementById("liBilling");
-  // liBill.style.borderBottom = "solid 1px var(--darkBlue)";
-  //liStat.style.border = "none";
   liBill.style.backgroundColor = "var(--grey)";
   liStat.style.backgroundColor = "transparent";
   liStat.style.fontWeight = "bold";

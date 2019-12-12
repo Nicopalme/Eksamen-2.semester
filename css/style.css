@@ -105,8 +105,10 @@ select:required:invalid {
 }
 
 /* Placeholder when in the option list */
-.placeholder{font-style: italic;
-    color: var(--grey);}
+.placeholder {
+    font-style: italic;
+    color: var(--grey);
+}
 
 option {
     color: var(--darkBlue);
@@ -166,8 +168,13 @@ button {
     flex-wrap: wrap;
 }
 
-.alignItemsCenter {align-items: center;}
-.alignItemsStart {align-items: flex-start;}
+.alignItemsCenter {
+    align-items: center;
+}
+
+.alignItemsStart {
+    align-items: flex-start;
+}
 
 
 /* General padding & margin
@@ -215,9 +222,10 @@ select {
     box-sizing: border-box;
 }
 
-.datepicker-here{
+.datepicker-here {
     padding: .5em;
-    margin: .2em 0 1.5em;}
+    margin: .2em 0 1.5em;
+}
 
 .datepicker {
     max-width: 100%;
@@ -229,17 +237,19 @@ select {
     select option:active {
         background: linear-gradient(#000000, #000000);
         background-color: #000000 !important; /* for IE */
-        /* color: #ffed00 !important;
+/* color: #ffed00 !important;
     } */
 
-    select option:checked {
-        background: linear-gradient(#d6d6d6, #d6d6d6);
-        background-color: #d6d6d6 !important; /* for IE */
-        color: #000000 !important;
-    } */
-    select:hover {
-        box-shadow: 0 0 10px 100px var(--grey) inset;
-    }
+select option:checked {
+    background: linear-gradient(#d6d6d6, #d6d6d6);
+    background-color: #d6d6d6 !important;
+    /* for IE */
+    color: #000000 !important;
+}
+
+*/ select:hover {
+    box-shadow: 0 0 10px 100px var(--grey) inset;
+}
 
 
 /* Actual content
@@ -290,14 +300,17 @@ nav li a:focus {
     border-top: var(--thickBorder);
     border-right: var(--thickBorder);
 }
+
 #liStatistics {
     border-top: var(--thickBorder);
     border-left: var(--thickBorder);
 }
 
-nav ul li img {overflow: hidden;
-width: .8em;
-padding-right: 0.2em;}
+nav ul li img {
+    overflow: hidden;
+    width: .8em;
+    padding-right: 0.2em;
+}
 
 
 /* Different tab content
@@ -348,10 +361,16 @@ section {
     background-image: url('../img/recycle.png');
 }
 
-.rowAlu, .rowPet, .rowHdpe, .rowGlass, .rowOtherP, .rowOtherM { 
+.rowAlu,
+.rowPet,
+.rowHdpe,
+.rowGlass,
+.rowOtherP,
+.rowOtherM {
     background-position: right bottom;
     background-repeat: no-repeat;
-    background-size: 30%;}
+    background-size: 30%;
+}
 
 
 /* Tabellen
@@ -462,6 +481,25 @@ tr:hover {
 
 /* Statistics
 .....................*/
+
+#iconStatistics {
+    width: 35px;
+    height: 363px;
+    margin-left: 10%;
+}
+
+#iconStatistics .iconBox {
+    height: 60px;
+}
+
+#iconStatistics img {
+    width: 100%;
+}
+
+#chart {
+    width: 70%;
+}
+
 
 /* Chart (external css)
 ...........*/

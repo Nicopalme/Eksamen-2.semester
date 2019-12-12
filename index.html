@@ -185,7 +185,7 @@ REGELER FOR HTML:
                         <!-- Link to the content for the statistics tab -->
                         <a href="#tabs-2">
                             <h2><img src="img/soejlechart.png">Statistics</h2>
-                            
+
                         </a>
                     </li>
                 </ul>
@@ -243,40 +243,67 @@ REGELER FOR HTML:
                         </tbody>
 
                     </table>
-                    
+
                 </section>
             </article>
 
 
 
             <!-- The content for the statistics tab -->
-            <article id="tabs-2" class="flexContainer alignItemsStart">
+            <article id="tabs-2">
 
-                <!-- Section whith info for the data parametres in use -->
-                <section class="dataInfo">
-                    <p id="curLocationS">Location:</p>
-                    <p id="curMachineS">Machine:</p>
-                    <p id="curBatchS">Batch:</p>
+                <section class="flexContainer alignItemsStart">
+                    <!-- Section whith info for the data parametres in use -->
+                    <div class="dataInfo">
+                        <p id="curLocationS">Location:</p>
+                        <p id="curMachineS">Machine:</p>
+                        <p id="curBatchS">Batch:</p>
+                    </div>
+                    <div class="dataInfo">
+                        <p>Date:</p>
+                        <p>Time:</p>
+                    </div>
                 </section>
-                <section class="dataInfo">
-                    <p>Date:</p>
-                    <p>Time:</p>
-                </section>
 
-                <!-- Section with the chart -->
-                <section>
-                    <!-- A svg tag for the script to put the chart in -->
-                    <svg class="chart"></svg>
 
-                    <!-- Script for the chart (external source) -->
-                    <script src="https://d3js.org/d3.v3.min.js"></script>
-                    <!-- Scrip for the chart (external source) -->
-                    <script src="js/chart.js"></script>
+                <section class="flexContainer alignItemsCenter">
+                    <div id="iconStatistics">
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/alu2.png" alt="aluminium">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/bottle1.png" alt="PET">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/milk.png" alt="HDPE">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/beer.png" alt="Glass">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/ketchup.png" alt="Other plastic">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/recycle.png" alt="Other material">
+                        </div>
+                    </div>
+
+
+                    <!-- Section with the chart -->
+                    <div id="chart">
+                        <!-- A svg tag for the script to put the chart in -->
+                        <svg class="chart"></svg>
+
+                        <!-- Script for the chart (external source) -->
+                        <script src="https://d3js.org/d3.v3.min.js"></script>
+                        <!-- Scrip for the chart (external source) -->
+                        <script src="js/chart.js"></script>
+                    </div>
                 </section>
 
             </article>
 
-        <!-- Close the tab-content div -->
+            <!-- Close the tab-content div -->
         </div>
     </main>
 

@@ -6,7 +6,7 @@ var data = {
   series: [
     {
       label: '2012',
-      values: [1447, 758, 139, 2298, 75, 165]
+      values: [1447, 758, 189, 2298, 117, 165]
     },]
 };
 
@@ -14,7 +14,7 @@ var chartWidth       = 700,
     barHeight        = 50,
     groupHeight      = barHeight * data.series.length,
     gapBetweenGroups = 10,
-    spaceForLabels   = 150,
+    spaceForLabels   = 110,
     spaceForLegend   = 200;
 
 // Zip the series data together (first values, second values, etc.)

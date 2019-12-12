@@ -164,10 +164,11 @@ button {
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
 }
 
-.margin{margin-bottom: 1em;}
+.alignItemsCenter {align-items: center;}
+.alignItemsStart {align-items: flex-start;}
+
 
 /* General padding & margin
 ..................................................*/
@@ -223,6 +224,22 @@ select {
     margin: 0 auto;
 }
 
+/* select option:hover,
+    select option:focus,
+    select option:active {
+        background: linear-gradient(#000000, #000000);
+        background-color: #000000 !important; /* for IE */
+        /* color: #ffed00 !important;
+    } */
+
+    select option:checked {
+        background: linear-gradient(#d6d6d6, #d6d6d6);
+        background-color: #d6d6d6 !important; /* for IE */
+        color: #000000 !important;
+    } */
+    select:hover {
+        box-shadow: 0 0 10px 100px var(--grey) inset;
+    }
 
 
 /* Actual content

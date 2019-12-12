@@ -35,11 +35,8 @@ summary {
 :root {
     /* Color variables */
     --darkBlue: #214050;
-    /* --lightBlue: #40687f; */
-    /* --lightBlue: #1c6881; */
     --lightBlue: #1c6881;
     --lightBlueFaded: rgba(50, 100, 255, .3);
-    /* --lightBlueFaded: rgba(64, 104, 128, .3); */
     --grey: #808184;
     --white: rgba(255, 255, 255, .95);
     --lightlightblue: #eef1f6;
@@ -65,7 +62,7 @@ body {
 
     background-color: var(--lightlightblue);
     position: relative;
-    background-image: url("../img/logo.svg");
+    background-image: url("../img/logo50.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right top;

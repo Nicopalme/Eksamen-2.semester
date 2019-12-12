@@ -61,7 +61,7 @@ function newTable() {
     let result = sortPricat(pricat[i]);
 
     // Insert data to the cells from pricat
-    cell1.innerHTML = '<button type="button" class="btn">Export invoice <img src="img/exportblaa.png" style="padding-left:1em;"></button>';
+    cell1.innerHTML = '<button type="button" class="btn">Export invoice <img src="img/exportblaa.png" alt="Export icon" style="padding-left:1em;"></button>';
     cell2.innerHTML = result[0];
     cell3.innerHTML = result[1];
     cell4.innerHTML = result[2];

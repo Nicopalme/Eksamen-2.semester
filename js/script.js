@@ -9,6 +9,7 @@ $(document).ready(newOptionBatch);
 // Expected data from file
 //......................................................................................
 let pricat = [
+  //Distributor[0];Total[1];ALU[2];PET[3];HDPE[4];Glass[5];Other plactics[6];Other material[7]
   "CocaCola;738;157;315;132;245;13;0",
   "Newcastle;249;33;0;0;216;7;0",
   "Heineken;591;125;104;0;312;0;50",
@@ -31,9 +32,9 @@ let pricat = [
 // pricat.readAsText(newFile);
 
 // Sort and split the pricat
-function sortPricat(pricatLine){
- let result = pricatLine.split(";");
- return result;
+function sortPricat(pricatLine) {
+  let result = pricatLine.split(";");
+  return result;
 };
 
 // Table function
@@ -73,6 +74,29 @@ function newTable() {
 };
 
 
+// Sort table on search (external script)
+//.............................................................
+function sortTable() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("AATable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+
 
 // MNJ TEST
 //......................................................................................
@@ -101,82 +125,156 @@ function sortPricatMNJ(pricatMNJLine) {
 };
 
 
+
 // Option values from pricat to machine input field
 //.............................................................
 function newOptionMachine() {
+  // Create variable for a new array later containing values of all machine numbers from the pricat
+  var newArray = [];
 
+  // Create an array only with machine numbers from pricat
+  // ...................................
   // Run thrugh pricat
   for (let i = 0; i < pricatMNJ.length; i++) {
     let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
+
+    // Push the maschine values from the pricat into the new array
+    newArray.push(resultMNJ[1]);
+
+  }
+
+  // Run this new array thrug the getUnique funcion, which sorts out dublicates
+  // ...................................
+  // Create variable for the dublicate-free array
+  var txt = getUnique(newArray);
+
+
+  // Create options for the select box based on the dublicate-free array
+  // ...................................
+  // Run thrugh the no-duboicate-array
+  for (let i = 0; i < txt.length; i++) {
+
     var x = document.getElementById("machine");
     var option = document.createElement("option");
 
-    // Create a new array with the maschine values from the pricat
-    var newArray = [resultMNJ[1]];
+    // Insert the values from the no-dublicate-array to an option
+    option.text = txt[i];
 
-    // getUnique();
-
-    // Insert the values from the new array to an option
-    option.text = newArray;
-
-    // Create option
+    // Create option in x
     x.add(option);
-
   }
- 
 };
 
 
-// Sort out dublicates (HELP)
-// https://www.tutorialrepublic.com/faq/how-to-remove-duplicate-values-from-a-javascript-array.php (HELP)
-// ..............................
-function getUnique(newArray){
-for (i = 0; i < newArray.length; i++) {
-  if (uniqueArray.indexOf(newArray[i]) === -1) {
-    uniqueArray.push(newArray[i]);
-  }
-}
-return uniqueArray;
-}
 
 
 // Option values from pricat to location input field
 //.............................................................
 function newOptionLocation() {
 
+  // Create variable for a new array later containing values of all locations from the pricat
+  var newArray = [];
+
+  // Create an array only with locations from pricat
+  // ...................................
+  // Run thrugh pricat
   for (let i = 0; i < pricatMNJ.length; i++) {
     let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
-    var x = document.getElementById("locations");
-    var option = document.createElement("option");
-    var newArraye = [resultMNJ[0]];
-// getUnique();
 
-    option.text = newArraye;
-
-    x.add(option);
+    // Push the locations from the pricat into the new array
+    newArray.push(resultMNJ[0]);
 
   }
- 
+
+  // Run this new array thrug the getUnique funcion, which sorts out dublicates
+  // ...................................
+  // Create variable for the dublicate-free array
+  var txt = getUnique(newArray);
+
+
+  // Create options for the select box based on the dublicate-free array
+  // ...................................
+  // Run thrugh the no-duboicate-array
+  for (let i = 0; i < txt.length; i++) {
+
+    var x = document.getElementById("locations");
+    var option = document.createElement("option");
+
+    // Insert the values from the no-dublicate-array to an option
+    option.text = txt[i];
+
+    // Create option in x
+    x.add(option);
+  }
+
 };
+
+
+
 
 // Option values from pricat to batch input field
 //.............................................................
 function newOptionBatch() {
 
+  // Create variable for a new array later containing values of all batch numbers from the pricat
+  var newArray = [];
+
+  // Create an array only with batch from pricat
+  // ...................................
+  // Run thrugh pricat
   for (let i = 0; i < pricatMNJ.length; i++) {
     let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
-    var x = document.getElementById("batch");
-    var option = document.createElement("option");
-    var newArray = [resultMNJ[2]];
-// getUnique();
 
-    option.text = newArray;
-
-    x.add(option);
+    // Push the batch from the pricat into the new array
+    newArray.push(resultMNJ[2]);
 
   }
- 
+
+  // Run this new array thrug the getUnique funcion, which sorts out dublicates
+  // ...................................
+  // Create variable for the dublicate-free array
+  var txt = getUnique(newArray);
+
+
+  // Create options for the select box based on the dublicate-free array
+  // ...................................
+  // Run thrugh the no-duboicate-array
+  for (let i = 0; i < txt.length; i++) {
+
+    var x = document.getElementById("batch");
+    var option = document.createElement("option");
+
+    // Insert the values from the no-dublicate-array to an option
+    option.text = txt[i];
+
+    // Create option in x
+    x.add(option);
+  }
+
 };
+
+
+
+
+// Sort out dublicates (External script)
+// https://www.tutorialrepublic.com/faq/how-to-remove-duplicate-values-from-a-javascript-array.php
+//.............................................................
+function getUnique(array) {
+  var uniqueArray = [];
+
+  // Run thrugh an array
+  for (i = 0; i < array.length; i++) {
+
+    // If a value isn´t in the array allready...
+    if (uniqueArray.indexOf(array[i]) === -1) {
+      // ...push it in there
+      uniqueArray.push(array[i]);
+    }
+  }
+  // The output is a new array without dublicates
+  return uniqueArray;
+}
+
 
 
 // Text from input fields to current .dataInfo
@@ -184,49 +282,26 @@ function newOptionBatch() {
 function curLocation() {
 
   var x = document.getElementById("locations").value;
-  document.getElementById("curLocationB").innerHTML = 'Location: ' + x ; 
-  document.getElementById("curLocationS").innerHTML = 'Location: ' + x ; 
+  document.getElementById("curLocationB").innerHTML = 'Location: ' + x;
+  document.getElementById("curLocationS").innerHTML = 'Location: ' + x;
 };
 
 function curMachine() {
 
   var x = document.getElementById("machine").value;
-  document.getElementById("curMachineB").innerHTML = 'Machine: ' + x ; 
-  document.getElementById("curMachineS").innerHTML = 'Machine: ' + x ; 
+  document.getElementById("curMachineB").innerHTML = 'Machine: ' + x;
+  document.getElementById("curMachineS").innerHTML = 'Machine: ' + x;
 };
 
 function curBatch() {
 
   var x = document.getElementById("batch").value;
-  document.getElementById("curBatchB").innerHTML = 'Batch: ' + x ; 
-  document.getElementById("curBatchS").innerHTML = 'Batch: ' + x ; 
+  document.getElementById("curBatchB").innerHTML = 'Batch: ' + x;
+  document.getElementById("curBatchS").innerHTML = 'Batch: ' + x;
 };
 
 
 
-
-
-
-// Sort table on search (external script)
-//.............................................................
-function sortTable() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("AATable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
 
 // Tab functions
 //...................................................................................

@@ -527,7 +527,7 @@ tr:hover > td:nth-child(2), tr:hover > td:nth-child(3){
 }
 
 .statisticsInfo{
-    margin-top: 5em;
+    margin-top: 1em;
 }
 
 /* Chart (external css)

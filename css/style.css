@@ -369,12 +369,17 @@ strong {
 .rowAlu,
 .rowPet,
 .rowHdpe,
-.rowGlass,
+.rowGlass
+ {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
 .rowOtherP,
 .rowOtherM {
     background-position: right bottom;
     background-repeat: no-repeat;
-    background-size: 30%;
+    background-size: 20%;
 }
 
 

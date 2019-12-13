@@ -520,6 +520,9 @@ tr:hover {
     width: 70%;
 }
 
+.statisticsInfo{
+    margin-top: 5em;
+}
 
 /* Chart (external css)
 ...........*/

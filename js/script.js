@@ -282,22 +282,22 @@ function getUnique(array) {
 function curLocation() {
 
   var x = document.getElementById("locations").value;
-  document.getElementById("curLocationB").innerHTML = 'Location: ' + x;
-  document.getElementById("curLocationS").innerHTML = 'Location: ' + x;
+  document.getElementById("curLocationB").innerHTML = 'Location: ' + '<strong>' + x + '</strong>';
+  document.getElementById("curLocationS").innerHTML = 'Location: ' + '<strong>' + x + '</strong>';
 };
 
 function curMachine() {
 
   var x = document.getElementById("machine").value;
-  document.getElementById("curMachineB").innerHTML = 'Machine: ' + x;
-  document.getElementById("curMachineS").innerHTML = 'Machine: ' + x;
+  document.getElementById("curMachineB").innerHTML = 'Machine: ' + '<strong>' + x + '</strong>';
+  document.getElementById("curMachineS").innerHTML = 'Machine: ' + '<strong>' + x + '</strong>';
 };
 
 function curBatch() {
 
   var x = document.getElementById("batch").value;
-  document.getElementById("curBatchB").innerHTML = 'Batch: ' + x;
-  document.getElementById("curBatchS").innerHTML = 'Batch: ' + x;
+  document.getElementById("curBatchB").innerHTML = 'Batch: ' + '<strong>' + x + '</strong>';
+  document.getElementById("curBatchS").innerHTML = 'Batch: ' + '<strong>' + x + '</strong>';
 };
 
 

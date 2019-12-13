@@ -236,12 +236,12 @@ select {
 
 
 select option:checked {
-    background-color: var(--lightBlueFaded) !important;
+    background-color: var(--lightBlueFaded) ;
     /* for IE */
-    color: #000000 !important;
+    color: var(--darkBlue) ;
 }
 
-*/ select:hover {
+select:hover {
     box-shadow: 0 0 10px 100px var(--grey) inset;
 }
 
@@ -271,8 +271,6 @@ nav li {
     float: left;
     width: 49.5%;
     text-align: center;
-
-    background-color: lemonchiffon;
 }
 
 nav li:active,

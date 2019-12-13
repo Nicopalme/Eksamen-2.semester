@@ -1,3 +1,9 @@
+// Script for tabs, gets info from JQuery UI library
+//......................................................................................
+$(function () {
+  $("#tabs").tabs();
+});
+
 // Run function when DOM is loaded
 //......................................................................................
 $(document).ready(newTable);
@@ -25,11 +31,6 @@ var pricat = [
   "Smirnoff;159;0;0;0;148;0;11",
   "Sol;146;75;17;0;54;0;0"
 ];
-
-
-// var newFile = new File('../totalPricat.txt');
-// var reader = new FileReader();
-// pricat.readAsText(newFile);
 
 // Sort and split the pricat
 function sortPricat(pricatLine) {

@@ -237,12 +237,12 @@ select {
 
 
 select option:checked {
-    background-color: var(--lightBlueFaded) !important;
+    background-color: var(--lightBlueFaded) ;
     /* for IE */
-    color: #000000 !important;
+    color: var(--darkBlue) ;
 }
 
-*/ select:hover {
+select:hover {
     box-shadow: 0 0 10px 100px var(--grey) inset;
 }
 
@@ -272,8 +272,6 @@ nav li {
     float: left;
     width: 49.5%;
     text-align: center;
-
-    background-color: lemonchiffon;
 }
 
 nav li:active,
@@ -372,12 +370,17 @@ strong {
 .rowAlu,
 .rowPet,
 .rowHdpe,
-.rowGlass,
+.rowGlass
+ {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
 .rowOtherP,
 .rowOtherM {
     background-position: right bottom;
     background-repeat: no-repeat;
-    background-size: 30%;
+    background-size: 20%;
 }
 
 
@@ -523,6 +526,9 @@ tr:hover > td:nth-child(2), tr:hover > td:nth-child(3){
     width: 70%;
 }
 
+.statisticsInfo{
+    margin-top: 5em;
+}
 
 /* Chart (external css)
 ...........*/

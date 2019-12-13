@@ -1,14 +1,20 @@
+// Script for tabs, gets info from JQuery UI library
+//......................................................................................
+$(function () {
+  $("#tabs").tabs();
+});
+
 // Run function when DOM is loaded
 //......................................................................................
-$(document).ready(billingFunction);
 $(document).ready(newTable);
+$(document).ready(billingFunction);
 $(document).ready(newOptionMachine);
 $(document).ready(newOptionLocation);
 $(document).ready(newOptionBatch);
 
 // Expected data from file
 //......................................................................................
-let pricat = [
+var pricat = [
   //Distributor[0];Total[1];ALU[2];PET[3];HDPE[4];Glass[5];Other plactics[6];Other material[7]
   "CocaCola;738;157;315;132;245;13;0",
   "Newcastle;249;33;0;0;216;7;0",
@@ -26,14 +32,9 @@ let pricat = [
   "Sol;146;75;17;0;54;0;0"
 ];
 
-
-// let newFile = new File('../totalPricat.txt');
-// let reader = new FileReader();
-// pricat.readAsText(newFile);
-
 // Sort and split the pricat
 function sortPricat(pricatLine) {
-  let result = pricatLine.split(";");
+  var result = pricatLine.split(";");
   return result;
 };
 
@@ -41,24 +42,24 @@ function sortPricat(pricatLine) {
 //.............................................................
 function newTable() {
 
-  let table = document.getElementById("tableBody");
+  var table = document.getElementById("tableBody");
 
   // Run thrugh pricat and insert row and cells in the table for each data string
-  for (let i = 0; i < pricat.length; i++) {
+  for (var i = 0; i < pricat.length; i++) {
 
-    let row = table.insertRow(i);
+    var row = table.insertRow(i);
 
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    let cell4 = row.insertCell(3);
-    let cell5 = row.insertCell(4);
-    let cell6 = row.insertCell(5);
-    let cell7 = row.insertCell(6);
-    let cell8 = row.insertCell(7);
-    let cell9 = row.insertCell(8);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+    var cell8 = row.insertCell(7);
+    var cell9 = row.insertCell(8);
 
-    let result = sortPricat(pricat[i]);
+    var result = sortPricat(pricat[i]);
 
     // Insert data to the cells from pricat
     cell1.innerHTML = '<button type="button" class="btn">Export invoice <img src="img/exportblaa.png" alt="Export icon" style="padding-left:1em;"></button>';
@@ -100,7 +101,7 @@ function sortTable() {
 
 // MNJ TEST
 //......................................................................................
-let pricatMNJ = [
+var pricatMNJ = [
   //Location[0];Machine[1];Batch[2];Distributor[3];Material[4];Color[5]
   "Buffalo;HLZ151256;2019112119351753;CocaCola;1;15",
   "Buffalo;HLZ151256;2019112119351753;Newcastle;1;15",
@@ -120,7 +121,7 @@ let pricatMNJ = [
 
 // Sort and split the pricat
 function sortPricatMNJ(pricatMNJLine) {
-  let resultMNJ = pricatMNJLine.split(";");
+  var resultMNJ = pricatMNJLine.split(";");
   return resultMNJ;
 };
 
@@ -135,8 +136,8 @@ function newOptionMachine() {
   // Create an array only with machine numbers from pricat
   // ...................................
   // Run thrugh pricat
-  for (let i = 0; i < pricatMNJ.length; i++) {
-    let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
+  for (var i = 0; i < pricatMNJ.length; i++) {
+    var resultMNJ = sortPricatMNJ(pricatMNJ[i]);
 
     // Push the maschine values from the pricat into the new array
     newArray.push(resultMNJ[1]);
@@ -152,7 +153,7 @@ function newOptionMachine() {
   // Create options for the select box based on the dublicate-free array
   // ...................................
   // Run thrugh the no-duboicate-array
-  for (let i = 0; i < txt.length; i++) {
+  for (var i = 0; i < txt.length; i++) {
 
     var x = document.getElementById("machine");
     var option = document.createElement("option");
@@ -178,8 +179,8 @@ function newOptionLocation() {
   // Create an array only with locations from pricat
   // ...................................
   // Run thrugh pricat
-  for (let i = 0; i < pricatMNJ.length; i++) {
-    let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
+  for (var i = 0; i < pricatMNJ.length; i++) {
+    var resultMNJ = sortPricatMNJ(pricatMNJ[i]);
 
     // Push the locations from the pricat into the new array
     newArray.push(resultMNJ[0]);
@@ -195,7 +196,7 @@ function newOptionLocation() {
   // Create options for the select box based on the dublicate-free array
   // ...................................
   // Run thrugh the no-duboicate-array
-  for (let i = 0; i < txt.length; i++) {
+  for (var i = 0; i < txt.length; i++) {
 
     var x = document.getElementById("locations");
     var option = document.createElement("option");
@@ -222,8 +223,8 @@ function newOptionBatch() {
   // Create an array only with batch from pricat
   // ...................................
   // Run thrugh pricat
-  for (let i = 0; i < pricatMNJ.length; i++) {
-    let resultMNJ = sortPricatMNJ(pricatMNJ[i]);
+  for (var i = 0; i < pricatMNJ.length; i++) {
+    var resultMNJ = sortPricatMNJ(pricatMNJ[i]);
 
     // Push the batch from the pricat into the new array
     newArray.push(resultMNJ[2]);
@@ -239,7 +240,7 @@ function newOptionBatch() {
   // Create options for the select box based on the dublicate-free array
   // ...................................
   // Run thrugh the no-duboicate-array
-  for (let i = 0; i < txt.length; i++) {
+  for (var i = 0; i < txt.length; i++) {
 
     var x = document.getElementById("batch");
     var option = document.createElement("option");
@@ -306,8 +307,8 @@ function curBatch() {
 // Tab functions
 //...................................................................................
 function billingFunction() {
-  let liStat = document.getElementById("liStatistics");
-  let liBill = document.getElementById("liBilling");
+  var liStat = document.getElementById("liStatistics");
+  var liBill = document.getElementById("liBilling");
   liStat.style.backgroundColor = "var(--grey)";
   liBill.style.backgroundColor = "transparent";
   liBill.style.fontWeight = "bold";
@@ -315,8 +316,8 @@ function billingFunction() {
 }
 
 function statisticsFunction() {
-  let liStat = document.getElementById("liStatistics");
-  let liBill = document.getElementById("liBilling");
+  var liStat = document.getElementById("liStatistics");
+  var liBill = document.getElementById("liBilling");
   liBill.style.backgroundColor = "var(--grey)";
   liStat.style.backgroundColor = "transparent";
   liStat.style.fontWeight = "bold";

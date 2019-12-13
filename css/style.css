@@ -232,6 +232,7 @@ select {
 .datepicker {
     max-width: 100%;
     margin: 0 auto;
+    outline: 2px solid var(--lightBlue);
 }
 
 
@@ -462,6 +463,11 @@ tr:hover {
     background-color: var(--lightBlueFaded);
 }
 
+/* Make coloumn 2 and 3 bold on hover */
+tr:hover > td:nth-child(2), tr:hover > td:nth-child(3){
+    font-weight: bold;
+}
+
 #tableHeadlines:hover {
     background-color: transparent;
 }
@@ -549,4 +555,4 @@ tr:hover {
     shape-rendering: crispEdges;
 }
 
-#exportStatistics{width: 13%; margin: 2em 2em 0 0;}
+#exportStatistics{width: 13%; margin: 2em auto 0;}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!-- Site language -->
+<html lang="en">
+
+
+<!-- Alt generelt (FJERN)
+............................................................. 
+
+REGELER FOR HTML: 
+- Hvis der er noget der skal væk, så brug ordet FJERN, så man kan søge på det.
+- Brug semantiske tags
+- ID og class navne skrivesPaaDenneMaade - ALTID PÅ ENGELSK
+- Hvis der er noget der skal rettes senere, så skriv XXX, så man kan søge på det.
+
+
+-->
+
+<head>
+
+    <!-- General meta 
+..................................................................... -->
+
+    <!-- Set caracters for the side (Alphabet, numbers ect.) -->
+    <meta charset="utf-8" />
+
+    <!-- Internet Explorer fallback (external source) -->
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+
+    <!-- Document title -->
+    <title>Data visualization | Anker Andersen A/S</title>
+
+    <!-- Anti SEO - no crawling by robots -->
+    <meta name="robots" content="noindex, nofollow">
+
+
+    <!-- Read stylesheets
+..................................................................... -->
+
+    <!-- Meyers CSS reset (external source) -->
+    <link href="css/reset.css" rel="stylesheet">
+
+    <!-- CSS for the datepicker (external source) -->
+    <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Our stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <!-- Read scripts
+..................................................................... -->
+
+    <!-- Script for using general jQuery (external source) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <!-- Script for UI jQuery (for user interface) (external source) -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Script for datepicker (external source) -->
+    <script src="js/datepicker.min.js"></script>
+    <!-- Include English language (external source) -->
+    <script src="js/datepicker.en.js"></script>
+
+    <!-- Script for chart (external source) -->
+    <script src="js/chart.js"></script>
+
+    <!-- Our script -->
+    <script src="js/script.js"></script>
+
+</head>
+
+
+<!-- All content
+..................................................................... -->
+
+<body>
+
+    <!-- All header content
+    ...................................... -->
+    <header>
+    </header>
+
+    <!-- Unique content for the site
+    ...................................... -->
+    <main class="flexContainer alignItemsCenter">
+
+        <!-- Sidebar with input fields
+        ...................................... -->
+        <aside class="fullHeight">
+
+            <!-- Name of the company -->
+            <h1 class="margin">Company name</h1>
+
+            <!-- Input for the selectbox "location" -->
+            <form class="padding">
+
+                <!-- Label with icon -->
+                <h3 class="margin"><img src="img/location.png" alt="Location icon"> Location:</h3>
+
+                <!-- Type of input field with a function that changes the location value in the tab windows  -->
+                <select id="locations" required onchange="curLocation()">
+
+                    <!-- Different options -->
+                    <option value="" selected class="placeholder">Choose Location</option>
+                    <option value="">ALL location</option>
+                    <!-- The rest of the values will be loaded from our script -->
+
+                </select>
+            </form>
+
+            <!-- Input for the selectbox "machine" -->
+            <form class="padding">
+
+                <!-- Label with icon -->
+                <h3 class="margin"><img src="img/tandhjul-1.png" alt="Machine icon">Machine:</h3>
+
+                <!-- Type of input field with a function that changes the machine value in the tab windows  -->
+                <select id="machine" required onchange="curMachine()">
+
+                    <!-- Different options -->
+                    <option value="" selected class="placeholder">Choose Machine</option>
+                    <option value="">ALL macines</option>
+                    <!-- The rest of the values will be loaded from our script -->
+
+                </select>
+            </form>
+
+
+            <!-- Label with icon for Dates -->
+            <h3 class="padding margin"><img src="img/kalender.png" alt=" Calender icon">Dates</h3>
+
+            <!-- A div to place the datepicker in -->
+            <div class="datepicker-here padding margin" data-language="en" data-multiple-dates="true"></div>
+
+
+            <!-- Input for the selectionbox "batch" -->
+            <form class="padding">
+
+                <!-- Label with icon -->
+                <h3 class="margin"><img src="img/batch.png" alt="Batch icon">Batch:</h3>
+
+                <!-- Type of input field with a function that changes the batch value in the tab windows  -->
+                <select id="batch" required onchange="curBatch()">
+
+                    <!-- Different options -->
+                    <option value="" selected class="placeholder">Choose Batch</option>
+                    <option value=""> ALL batches</option>
+                    <!-- The rest of the values will be loaded from our script -->
+
+                </select>
+            </form>
+
+
+        </aside>
+
+
+
+        <!-- The actual content of the site
+        ...................................... -->
+        <div id="tabs" class="fullHeight">
+
+            <!-- Navigation between the two tabs -->
+            <nav>
+                <ul class="flexContainer alignItemsCenter">
+
+                    <!-- The headline for the billing tab -->
+                    <li id="liBilling" onclick="billingFunction()">
+
+                        <!-- Link to the content for the billing tab -->
+                        <a href="#tabs-1">
+                            <h2><img src="img/printer.png" alt="Printer icon">Billing</h2>
+                        </a>
+                    </li>
+
+
+                    <!-- The headline for the statistics tab -->
+                    <li id="liStatistics" onclick="statisticsFunction()">
+
+                        <!-- Link to the content for the statistics tab -->
+                        <a href="#tabs-2">
+                            <h2><img src="img/soejlechart.png" alt="Chart icon">Statistics</h2>
+                            
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+
+
+            <!-- The content for the billing tab -->
+            <article id="tabs-1" class="flexContainer spaceBetween">
+
+                <section class="flexContainer alignItemsStart dataInfosection">
+                    <!-- Sections whith info for the data parametres in use -->
+                    <div class="dataInfo">
+                        <p id="curLocationB">Location:</p>
+                        <p id="curMachineB">Machine:</p>
+                        <p id="curBatchB">Batch:</p>
+                    </div>
+                    <div class="dataInfo">
+                        <p>Date:</p>
+                        <p>Time:</p>
+                    </div>
+                </section>
+
+                <!-- The distributor search box -->
+                <section id="distInput">
+                    <input type="text" id="myInput" onkeyup="sortTable()" placeholder="Search for distributors.."
+                        title="Type in a name" autocomplete="off">
+                </section>
+
+                <!-- Section with the table -->
+                <section id="tableSection">
+
+                    <!-- The table -->
+                    <table id="AATable">
+
+                        <!-- The table headlines -->
+                        <thead>
+                            <tr id="tableHeadlines">
+
+                                <!-- The individiual headlines where the first one contains a button -->
+                                <th class="rowButton"><button type="button" class="btn">Export all remaining
+                                        invoices <img src="img/exportblaa.png" alt="Export icon" style="padding-left:2em;"></button></th>
+                                <th class="rowDist"> Distributor</th>
+                                <th class="rowTotal">Total</th>
+                                <th class="rowAlu"> ALU</th>
+                                <th class="rowPet">PET</th>
+                                <th class="rowHdpe">HDPE</th>
+                                <th class="rowGlass">Glass</th>
+                                <th class="rowOtherP">Other plastics</th>
+                                <th class="rowOtherM">Other material</th>
+                            </tr>
+                        </thead>
+
+                        <!-- The table body content -->
+                        <tbody id="tableBody">
+                            <!-- This will be loaded from our script -->
+                        </tbody>
+
+                    </table>
+
+                </section>
+            </article>
+
+
+
+            <!-- The content for the statistics tab -->
+            <article id="tabs-2">
+
+                <section class="flexContainer alignItemsStart dataInfosection">
+                    <!-- Section whith info for the data parametres in use -->
+                    <div class="dataInfo">
+                        <p id="curLocationS">Location:</p>
+                        <p id="curMachineS">Machine:</p>
+                        <p id="curBatchS">Batch:</p>
+                    </div>
+                    <div class="dataInfo">
+                        <p>Date:</p>
+                        <p>Time:</p>
+                    </div>
+                </section>
+
+
+                <section class="flexContainer alignItemsCenter statisticsInfo">
+                    <div id="iconStatistics">
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/alu2.png" alt="aluminium">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/bottle1.png" alt="PET">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/milk.png" alt="HDPE">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/beer.png" alt="Glass">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/ketchup.png" alt="Other plastic">
+                        </div>
+                        <div class="iconBox flexContainer alignItemsCenter">
+                            <img src="img/recycle.png" alt="Other material">
+                        </div>
+                    </div>
+
+
+                    <!-- Section with the chart -->
+                    <div id="chart">
+                        <!-- A svg tag for the script to put the chart in -->
+                        <svg class="chart"></svg>
+
+                        <!-- Script for the chart (external source) -->
+                        <script src="https://d3js.org/d3.v3.min.js"></script>
+                        <!-- Scrip for the chart (external source) -->
+                        <script src="js/chart.js"></script>
+                    </div>
+                </section>
+
+                <section class="flexContainer flexEnd">
+                    <button id="exportStatistics" class="btn">Export statistics</button>
+                </section>
+
+            </article>
+
+            <!-- Close the tab-content div -->
+        </div>
+    </main>
+
+
+
+
+    <!-- All footer content
+    ...................................... -->
+    <footer>
+    </footer>
+
+</body>
+
+</html>

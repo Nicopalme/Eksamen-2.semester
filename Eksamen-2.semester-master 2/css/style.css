@@ -1,0 +1,558 @@
+/* Meyers reset
+.........................................................................*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+
+/* CSS struktur
+.........................................................................*/
+/* REGELER FOR CSS:
+- Alt der har med fonte at gøre står samlet i toppen
+- Lav afsnit og en overskuelig struktur
+- Skriv kommentarer!
+- Alt skrives i procent eller em!
+*/
+
+
+/* Generel
+.........................................................................*/
+
+
+/* CSS variables - Color, padding, border & shadow
+..................................................*/
+:root {
+    /* Color variables */
+    --darkBlue: #214050;
+    --lightBlue: #1c6881;
+    --lightBlueFaded: rgba(50, 100, 255, .3);
+    --grey: #808184;
+    --white: rgba(255, 255, 255, .95);
+    --lightlightblue: #eef1f6;
+    --green: #90CE67;
+
+    /* Padding variable */
+    --pad: .5em 1.5em;
+
+    /* Border variable */
+    --thickBorder: 3px solid var(--darkBlue);
+
+    /* Shadow variable */
+    --shadow: 0px 0px 25px var(--darkBlue);
+    --lightShadow: 0px 0px 3px var(--lightBlue);
+}
+
+
+/* Generel things in body
+..................................................*/
+body {
+    font: 12px/18px;
+    font-family: 'Arial', sans-serif;
+    color: var(--darkBlue);
+
+    background-color: var(--lightlightblue);
+    position: relative;
+    background-image: url("../img/logo50.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+
+    /* Make body fill the intire screen height and width */
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+/* Text
+..................................................*/
+
+/* Text for the sidebar
+...............................*/
+h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 3% 0;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+label,
+h3 {
+    font-size: 1.2em;
+}
+
+/* The placeholder in the selection boxes */
+select:required:invalid {
+    color: #666;
+    font-style: italic;
+    cursor: pointer;
+}
+
+/* Placeholder when in the option list */
+.placeholder {
+    font-style: italic;
+    color: var(--grey);
+}
+
+option {
+    color: var(--darkBlue);
+    font-style: normal;
+}
+
+
+/* Text for the tabs
+...............................*/
+h2 {
+    font-size: 1.8em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--darkBlue);
+}
+
+/* Data parametres in use */
+.dataInfo {
+    font-size: 0.8em;
+    line-height: 1.9em;
+}
+
+/* Placeholder in distributor search */
+::placeholder {
+    font-style: italic;
+}
+
+
+/* Text for the table
+...............................*/
+/* Table headline */
+th {
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+/* Table body */
+td {
+    font-size: 0.8em;
+}
+
+button {
+    font-size: .8em;
+    color: var(--darkBlue);
+    margin: 0;
+    text-align: center;
+}
+
+
+
+/* Flex
+..................................................*/
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.alignItemsCenter {
+    align-items: center;
+}
+
+.alignItemsStart {
+    align-items: flex-start;
+}
+
+.flexEnd{justify-content: flex-end;}
+
+/* General padding & margin
+..................................................*/
+.margin {
+    margin-bottom: .5em;
+}
+
+.padding {
+    padding: 0 2em;
+}
+
+
+
+/* Header
+.........................................................................*/
+
+
+
+/* Main
+.........................................................................*/
+main {
+    justify-content: space-around;
+    height: 100%;
+}
+
+
+/* Sidebar
+..................................................*/
+aside {
+    width: 20%;
+    background-color: var(--white);
+    height: 90vh;
+    border: var(--thickBorder);
+    box-shadow: var(--shadow);
+}
+
+/* Input fields */
+input[type=text],
+select {
+    width: 100%;
+    padding: .5em;
+    margin: .2em 0 1.5em;
+    outline: 2px solid var(--lightBlue);
+    box-sizing: border-box;
+}
+
+.datepicker-here {
+    padding: .5em;
+    margin: .2em 0 1.5em;
+}
+
+.datepicker {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+select option:checked {
+    background-color: var(--lightBlueFaded) ;
+    /* for IE */
+    color: var(--darkBlue) ;
+}
+
+select:hover {
+    box-shadow: 0 0 10px 100px var(--grey) inset;
+}
+
+
+/* Actual content
+..................................................*/
+/* The intire div */
+#tabs {
+    width: 70%;
+    border: var(--thickBorder);
+    border-top: none;
+    box-shadow: var(--shadow);
+    background-color: var(--white);
+    height: 90vh;
+}
+
+
+/* Navigation
+............................*/
+nav ul {
+    width: 100%;
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav li {
+    float: left;
+    width: 49.5%;
+    text-align: center;
+}
+
+nav li:active,
+nav li:focus {
+    border: none;
+}
+
+nav li h2 {
+    padding: 3% 0;
+    border: none;
+}
+
+nav li a:focus {
+    border: none;
+}
+
+/* Different borders on tab headlines */
+#liBilling {
+    border-top: var(--thickBorder);
+    border-right: var(--thickBorder);
+}
+
+#liStatistics {
+    border-top: var(--thickBorder);
+    border-left: var(--thickBorder);
+}
+
+nav ul li img {
+    overflow: hidden;
+    width: .8em;
+    padding-right: 0.2em;
+}
+
+
+/* Different tab content
+............................*/
+article {
+    padding: var(--pad);
+}
+
+section {
+    width: 100%;
+}
+
+/* Data parametres in use */
+.dataInfo {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    width: 50%;
+}
+
+.dataInfosection {
+    width: 40%;
+}
+
+#distInput {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    width: 40%;
+    float: right;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Billing
+.....................*/
+
+/* Table icons
+...........*/
+.rowAlu {
+    background-image: url('../img/alu2.png');
+}
+
+.rowPet {
+    background-image: url('../img/bottle1.png');
+}
+
+.rowHdpe {
+    background-image: url('../img/milk.png');
+}
+
+.rowGlass {
+    background-image: url('../img/beer.png');
+}
+
+.rowOtherP {
+    background-image: url('../img/ketchup.png');
+}
+
+.rowOtherM {
+    background-image: url('../img/recycle.png');
+}
+
+.rowAlu,
+.rowPet,
+.rowHdpe,
+.rowGlass
+ {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+.rowOtherP,
+.rowOtherM {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 20%;
+}
+
+
+/* Tabellen
+...........*/
+#tableSection {
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+table {
+    font-family: arial, sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Column width */
+td:nth-child(1),
+th:nth-child(1) {
+    width: 13%;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+    width: 13%;
+}
+
+td:nth-child(3),
+th:nth-child(3) {
+    width: 13%;
+}
+
+td:nth-child(4),
+th:nth-child(4) {
+    width: 10%;
+}
+
+td:nth-child(5),
+th:nth-child(5) {
+    width: 10%;
+}
+
+td:nth-child(6),
+th:nth-child(6) {
+    width: 10%;
+}
+
+td:nth-child(7),
+th:nth-child(7) {
+    width: 10%;
+}
+
+td:nth-child(8),
+th:nth-child(8) {
+    width: 15%;
+}
+
+td:nth-child(9),
+th:nth-child(9) {
+    width: 15%;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: .5em;
+}
+
+td {
+    text-align: right;
+}
+
+th {
+    text-align: left;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}
+
+tr:hover {
+    background-color: var(--lightBlueFaded);
+}
+
+#tableHeadlines:hover {
+    background-color: transparent;
+}
+
+
+/* Buttons
+...........*/
+.btn {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--green);
+    padding: .7em .5em;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    box-shadow: var(--lightShadow);
+}
+
+/* On mouse-over */
+.btn:hover {
+    /* background: var(--lightBlue); */
+    /* color: #fff; */
+    outline: 1px solid var(--lightBlue);
+}
+
+.buttonClicked {
+    background: var(--grey);
+}
+
+.btn:visited {background: var(--grey);}
+.btn:focus {background: var(--grey);}
+
+
+
+/* Statistics
+.....................*/
+
+#iconStatistics {
+    width: 35px;
+    height: 363px;
+    margin-left: 10%;
+}
+
+#iconStatistics .iconBox {
+    height: 60px;
+}
+
+#iconStatistics img {
+    width: 100%;
+}
+
+#chart {
+    width: 70%;
+}
+
+.statisticsInfo{
+    margin-top: 5em;
+}
+
+/* Chart (external css)
+...........*/
+#chart {
+    width: 70%;
+}
+.chart rect {
+    fill: var(--lightBlueFaded);
+}
+
+.chart text {
+    fill: var(--darkBlue);
+    font: 14px sans-serif;
+    text-anchor: end;
+}
+
+.chart .label {
+    fill: var(--darkBlue);
+    font: 14px sans-serif;
+    text-anchor: end;
+}
+
+/* .bar:hover {
+    fill: var(--lightBlue);
+} */
+
+.axis path {
+    fill: none;
+    stroke: var(--darkBlue);
+    shape-rendering: crispEdges;
+}
+
+#exportStatistics{width: 13%; margin: 2em 2em 0 0;}
